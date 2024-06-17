@@ -12,7 +12,7 @@
 
   <!-- Core Css -->
   <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
-  <title>Ample Template by WrapPixel</title>
+  <title>Huzur Design</title>
 </head>
 
 <body>

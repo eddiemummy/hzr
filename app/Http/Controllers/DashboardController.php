@@ -62,7 +62,7 @@ class DashboardController extends Controller
                'email' => $request->get('email'),
            ]);
 
-        return redirect()->route('dashboard')->with('success', 'Your information has been updated');
+        return back()->with('success', 'Your information has been updated');
     }
     public function about() {
         $about = About::latest()->first();

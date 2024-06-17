@@ -52,18 +52,6 @@
                       </tr>
                       @endforeach
                     </tbody>
-                    <tfoot>
-                      <!-- start row -->
-                      <tr>
-                        <th>Başlık</th>
-                        <th>Vurgu</th>
-                        <th>İçerik</th>
-                        <th>Buton</th>
-                        <th>Link</th>
-                        <th>Eylem</th>
-                      </tr>
-                      <!-- end row -->
-                    </tfoot>
                   </table>
                     {{ $sliders->links() }}
                 </div>

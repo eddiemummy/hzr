@@ -41,7 +41,7 @@ class ProductController extends Controller
             'name' => 'string|required',
             'old_price' => 'numeric|nullable',
             'new_price' => 'numeric|required',
-            'default_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'default_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048|required',
         ]);
         $path = null;
         if($request->hasFile('image')) {

@@ -47,7 +47,7 @@
                 <span class="d-flex">
                   <img src="{{ asset('assets/images/profile/user-1.jpg') }}" class="rounded" width="30" alt="user">
                 </span>
-                            <span class="hide-menu fw-medium">Muammer Güngör</span>
+                            <span class="hide-menu fw-medium">{!! auth()->user()->name !!}</span>
                         </a>
                         <ul aria-expanded="false" class="collapse first-level">
 
@@ -70,7 +70,7 @@
                         <span class="hide-menu">Panel</span>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="" id="get-url">
+                            <a class="sidebar-link" href="{!! route('dashboard') !!}" id="get-url">
                             <iconify-icon icon="solar:screencast-2-linear" class="aside-icon"></iconify-icon>
                             <span class="hide-menu">Ana Sayfa</span>
                         </a>
@@ -516,9 +516,9 @@
                                                          class="rounded"
                                                          width="50" height="50" alt="ample-img">
                                                     <div class="ms-3">
-                                                        <h5 class="mb-0 fs-4">Muammer Güngör</h5>
+                                                        <h5 class="mb-0 fs-4">{!! auth()->user()->name !!}</h5>
                                                         <p class="mb-0 d-flex align-items-center text-muted">
-                                                            muammer@mamiden.com
+                                                            {!! auth()->user()->email !!}
                                                         </p>
                                                     </div>
                                                 </div>
