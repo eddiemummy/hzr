@@ -93,7 +93,7 @@
                                     </div>
 
                                     <div class="ms-auto mt-3 mt-md-0">
-                                                <button type="submit" class="btn btn-primary hstack gap-6">
+                                                <button type="submit" class="btn btn-success hstack gap-6">
                                                     <iconify-icon icon="tabler:edit" class="fs-7"></iconify-icon>
                                                 </button>
                                             </div>

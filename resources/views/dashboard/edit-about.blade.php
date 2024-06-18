@@ -23,7 +23,7 @@
                         <img src="{{ asset('storage/'. $about->image) }}" width="200">
                     </div>
                   </div>
-                  <button class="btn btn-primary" type="submit">
+                  <button class="btn btn-success" type="submit">
                       <iconify-icon icon="tabler:edit" class="fs-7"></iconify-icon>
                   </button>
                 </div>
