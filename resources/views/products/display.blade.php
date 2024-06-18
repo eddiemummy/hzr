@@ -26,7 +26,7 @@
 
                                 <div class="flex-lg-row">
                                     <a href="{{ route('products.change',['product'=>$product]) }}" class="btn btn-success">
-                                        Değiştir
+                                       <iconify-icon icon="tabler:edit" class="fs-7"></iconify-icon>
                                     </a>
                                 </div>
                             </div>
@@ -66,7 +66,7 @@
                                         <a href="{{ route('products.delPic',['id'=>$pimage->id]) }}"
                                            class="btn btn-primary"
                                            onclick="return confirm('Silmek istediğinizden emin misiniz?');">
-                                            Sil
+                                            <iconify-icon icon="solar:trash-bin-minimalistic-line-duotone" class="fs-7"></iconify-icon>
                                         </a>
                                     </div>
                                 </div>

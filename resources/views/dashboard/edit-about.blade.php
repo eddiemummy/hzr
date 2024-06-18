@@ -10,11 +10,12 @@
                 <div class="px-4 py-3 border-bottom">
                   <h4 class="card-title mb-0">Hakkımızda Sayfasını Düzenle</h4>
                 </div>
-                <div class="card-body p-4">
-                  <div class="mb-4">
-                    <label for="body" class="form-label">İçerik</label>
-                      <textarea class="form-control" id="exampleInputname" name="body" rows="5">{!! $about->body !!}</textarea>
+                  <div class="col-md-12">
+                      <div class="form-floating mb-3">
+                          <textarea id="editor" name="body">{!! $about->body !!}</textarea>
+                      </div>
                   </div>
+                <div class="card-body p-4">
                      <div class="mb-4">
                     <label for="image" class="form-label">Resim</label>
                     <div class="input-group">
@@ -22,7 +23,9 @@
                         <img src="{{ asset('storage/'. $about->image) }}" width="200">
                     </div>
                   </div>
-                  <button class="btn btn-primary" type="submit">Düzenle</button>
+                  <button class="btn btn-primary" type="submit">
+                      <iconify-icon icon="tabler:edit" class="fs-7"></iconify-icon>
+                  </button>
                 </div>
               </div>
             </div>

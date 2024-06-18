@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InterfaceController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
@@ -67,6 +68,6 @@ Route::get('/dashboard/sliders/delete/{slider}',[SliderController::class,'delete
 
 Route::resource('dashboard/categories', CategoryController::class);
 Route::get('/dashboard/categories/delete/{category}',[CategoryController::class,'delete'])->name('categories.delete');
-
+Route::get('/',[InterfaceController::class,'slider'])->name('sliders');
 
 });

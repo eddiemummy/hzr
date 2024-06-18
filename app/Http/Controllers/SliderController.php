@@ -37,8 +37,8 @@ class SliderController extends Controller
             'body' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'highlight' => 'required',
-            'button' => 'string',
-            'link' => 'string',
+            'button' => 'nullable|string',
+            'link' => 'nullable|string',
         ]);
         $path = null;
         if($request->hasFile('image')) {
@@ -82,8 +82,8 @@ class SliderController extends Controller
             'body' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'highlight' => 'required',
-            'button' => 'nullable|string',
-            'link' => 'nullable|string',
+            'button' => 'nullable',
+            'link' => 'nullable',
         ]);
         $path = $slider->image ?? null;
         if($request->hasFile('image')) {

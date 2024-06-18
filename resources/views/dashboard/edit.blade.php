@@ -25,7 +25,9 @@
                       <input type="text" class="form-control" id="exampleInputname" name="email" value="{{ $contact->email }}">
                     </div>
                   </div>
-                  <button class="btn btn-primary" type="submit">Düzenle</button>
+                  <button class="btn btn-primary" type="submit">
+                      <iconify-icon icon="tabler:edit" class="fs-7"></iconify-icon>
+                  </button>
                 </div>
               </div>
             </div>

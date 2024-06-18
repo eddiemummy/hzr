@@ -40,7 +40,7 @@
                                         <div class="d-md-flex align-items-center">
                                               <div class="ms-auto mt-3 mt-md-0">
                                                 <button type="submit" class="btn btn-primary hstack gap-6">
-                                                    Değiştir
+                                                    <iconify-icon icon="tabler:edit" class="fs-7"></iconify-icon>
                                                 </button>
                                             </div>
                                         </div>

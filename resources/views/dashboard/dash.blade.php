@@ -84,9 +84,8 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <span class="d-flex">
-                    <iconify-icon icon="mdi:car-search-outline" class="fs-6"></iconify-icon>
-                </span>
+
+                            <iconify-icon icon="solar:cart-large-2-linear" class="aside-icon"></iconify-icon>
                     <span class="hide-menu">Ürünler</span>
 
                     </a>
@@ -124,7 +123,7 @@
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="{{ route('sliders.index') }}" aria-expanded="false">
                             <div class="d-flex">
-                                <iconify-icon icon="solar:money-bag-outline"></iconify-icon>
+                                <iconify-icon icon="solar:widget-4-outline"></iconify-icon>
                             </div>
                             <span class="hide-menu">Slider</span>
                         </a>
@@ -133,7 +132,7 @@
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="{{ route('dashboard.system') }}" aria-expanded="false">
                             <div class="d-flex">
-                                <iconify-icon icon="solar:money-bag-outline"></iconify-icon>
+                                <iconify-icon icon="solar:settings-linear"></iconify-icon>
                             </div>
                             <span class="hide-menu">Site Ayarları</span>
                         </a>
@@ -142,7 +141,7 @@
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="{{ route('dashboard.updateAbout') }}" aria-expanded="false">
                             <div class="d-flex">
-                                <iconify-icon icon="solar:money-bag-outline"></iconify-icon>
+                                <iconify-icon icon="solar:user-circle-line-duotone"></iconify-icon>
                             </div>
                             <span class="hide-menu">Hakkımızda</span>
                         </a>

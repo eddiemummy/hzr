@@ -56,8 +56,11 @@
 			<!-- Mobile-menu start -->
 
 			<!-- Mobile-menu end -->
+
 			<!-- SLIDER-BANNER-AREA START -->
-			<x-slider/>
+
+            <x-slider :sliders="$sliders" :products="$products"/>
+
 			<!-- End Slider-section -->
 			<!-- sidebar-search Start -->
 			<x-search/>

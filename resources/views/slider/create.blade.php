@@ -23,7 +23,7 @@
                   <form method="post" action="{{ route('sliders.store') }}" enctype="multipart/form-data">
                       @csrf
                     <div class="row">
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control" name="title" placeholder="Başlık" value="{{ old('title') }}">
                             @error('title')
@@ -32,25 +32,25 @@
                           <label for="title">Başlık</label>
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <div class="form-floating mb-3">
-                            <textarea class="form-control" name ="body" placeholder="İçerik"></textarea>
+                            <textarea class="form-control" name ="body" placeholder="İçerik">{{ old('body') }}</textarea>
                             @error('body')
                             <p style="color:red; font-size: small">{{ $message }}</p>
                             @enderror
                           <label for="body">İçerik</label>
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <div class="form-floating mb-3">
-                          <input type="text" class="form-control"  name="highlight" placeholder="Vurgu">
+                          <input type="text" class="form-control"  name="highlight" placeholder="Vurgu" {{ old('highlight') }}>
                             @error('highlight')
                             <p style="color:red; font-size: small">{{ $message }}</p>
                             @enderror
                           <label for="highlight">Vurgu</label>
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control"  name="button" placeholder="Buton">
                             @error('button')
@@ -59,7 +59,7 @@
                           <label for="button">Buton</label>
                         </div>
                       </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control"  name="link" placeholder="Link">
                             @error('link')

@@ -1,3 +1,4 @@
+@props(['sliders','products'])
 <section class="slider-banner-area clearfix">
 				<!-- Sidebar-social-media start -->
 				<div class="sidebar-social d-none d-md-block">
@@ -16,24 +17,19 @@
 				<div class="banner-left floatleft">
 					<!-- Slider-banner start -->
 					<div class="slider-banner">
-						<div class="single-banner banner-1">
-							<a class="banner-thumb" href="#"><img src="img/banner/1.jpg" alt=""></a>
-							<span class="pro-label new-label">new</span>
-							<span class="price">$50.00</span>
+                        @foreach($products as $product)
+                        <div class="single-banner banner-{!! $product->id !!}">
+							<a class="banner-thumb" href="#"><img src="{!! asset('storage/'.$product->default_image) !!}" alt=""></a>
+							<span class="pro-label new-label">yeni</span>
+							<span class="price">{!! $product->new_price !!}&#8378;</span>
 							<div class="banner-brief">
-								<h2 class="banner-title"><a href="#">Product name</a></h2>
-								<p class="mb-0">Furniture</p>
+								<h2 class="banner-title"><a href="#">{!! $product->name !!}</a></h2>
+								<p class="mb-0">{{ $product->category->name }}</p>
 							</div>
-							<a href="#" class="button-one font-16px" data-text="Buy now">Buy now</a>
+							<a href="#" class="button-one font-16px" data-text="Şimdi al">Satın Al</a>
 						</div>
-						<div class="single-banner banner-2">
-							<a class="banner-thumb" href="#"><img src="img/banner/2.jpg" alt=""></a>
-							<div class="banner-brief">
-								<h2 class="banner-title"><a href="#">New Product 2021</a></h2>
-								<p class="hidden-md hidden-sm d-none d-md-block">Lorem Ipsum is simply dummy text of the printing and types sate industry. Lorem Ipsum has been the industry.</p>
-								<a href="#" class="button-one font-16px" data-text="Buy now">Buy now</a>
-							</div>
-						</div>
+                        @endforeach
+
 					</div>
 					<!-- Slider-banner end -->
 				</div>
@@ -42,40 +38,19 @@
 					<div class="slider-area">
 						<div class="bend niceties preview-2">
 							<div id="ensign-nivoslider" class="slides">
-								<img src="img/slider/slider-1/1.jpg" alt="" title="#slider-direction-1">
-								<img src="img/slider/slider-1/2.jpg" alt="" title="#slider-direction-2">
-								<img src="img/slider/slider-1/3.jpg" alt="" title="#slider-direction-3">
+                                @foreach($sliders as $slider)
+								<img src="{!! asset("storage/".$slider->image) !!}" alt="" title="#slider-direction-{!! $slider->id !!}">
+                                 @endforeach
 							</div>
-							<!-- direction 1 -->
-							<div id="slider-direction-1" class="t-cn slider-direction">
-								<div class="slider-progress"></div>
-								<div class="slider-content t-lfl s-tb slider-1">
-									<div class="title-container s-tb-c title-compress">
-										<div class="layer-1">
-											<div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-												<h2 class="slider-title3 text-uppercase mb-0">welcome to our</h2>
-											</div>
-											<div class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1.5s">
-												<h2 class="slider-title1 text-uppercase mb-0">furniture</h2>
-											</div>
-											<div class="wow fadeIn" data-wow-duration="2s" data-wow-delay="2.5s">
-												<h3 class="slider-title2 text-uppercase">gallery 2021</h3>
-											</div>
-											<div class="wow fadeIn" data-wow-duration="2.5s" data-wow-delay="3.5s">
-												<a href="#" class="button-one style-2 text-uppercase mt-20" data-text="Shop now">Shop now</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- direction 2 -->
-							<div id="slider-direction-2" class="slider-direction">
+
+                            @foreach($sliders as $slider)
+                               <div id="slider-direction-{!! $slider->id !!}" class="slider-direction">
 								<div class="slider-progress"></div>
 								<div class="slider-content t-lfl s-tb slider-1">
 									<div class="title-container s-tb-c title-compress">
 										<div class="layer-1">
 											<div class="wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.5s">
-												<h2 class="slider-title3 text-uppercase mb-0">welcome to our</h2>
+												<h2 class="slider-title3 text-uppercase mb-0">{!! $slider->title !!}</h2>
 											</div>
 											<div class="wow fadeInUpBig" data-wow-duration="1.5s" data-wow-delay="0.5s">
 												<h2 class="slider-title1 text-uppercase">furniture</h2>
@@ -90,31 +65,7 @@
 									</div>
 								</div>
 							</div>
-							<!-- direction 3 -->
-							<div id="slider-direction-3" class="slider-direction">
-								<div class="slider-progress"></div>
-								<div class="slider-content t-lfl s-tb slider-1">
-									<div class="title-container s-tb-c title-compress">
-										<div class="layer-1">
-											<div class="wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.5s">
-												<h2 class="slider-title3 text-uppercase mb-0">welcome to our</h2>
-											</div>
-											<div class="wow fadeInUpBig" data-wow-duration="1.5s" data-wow-delay="0.5s">
-												<h2 class="slider-title1 text-uppercase mb-0">furniture</h2>
-											</div>
-											<div class="wow fadeInUpBig" data-wow-duration="2s" data-wow-delay="0.5s">
-												<h3 class="slider-title2 text-uppercase">gallery 2021</h3>
-											</div>
-											<div class="wow fadeInUpBig" data-wow-duration="2.5s" data-wow-delay="0.5s">
-												<p class="slider-pro-brief">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
-											</div>
-											<div class="wow fadeInUpBig" data-wow-duration="3s" data-wow-delay="0.5s">
-												<a href="#" class="button-one style-2 text-uppercase mt-20" data-text="Shop now">Shop now</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+                            @endforeach
 						</div>
 					</div>
 					<!-- Slider-area end -->

@@ -58,8 +58,8 @@
                                         </div>
                                     </div>
                                     <div class="ms-auto mt-3 mt-md-0">
-                                                <button type="submit" class="btn btn-info hstack gap-6">
-                                                    Değiştir
+                                                <button type="submit" class="btn btn-primary hstack gap-6">
+                                                    <iconify-icon icon="tabler:edit" class="fs-7"></iconify-icon>
                                                 </button>
                                             </div>
                                     </div>
