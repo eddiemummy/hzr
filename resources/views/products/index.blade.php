@@ -23,7 +23,6 @@
                       <!-- start row -->
                       <tr>
                         <th>Kategori</th>
-                        <th>Ürün Açıklaması</th>
                         <th>İsim</th>
                         <th>Eski Fiyat</th>
                         <th>Yeni Fiyat</th>
@@ -37,20 +36,21 @@
                       @foreach($products as $product)
                       <tr>
                         <td>{{ Str::words($product->category->name,4,'..') }}</td>
-                          <td>{{ Str::words($product->description,4,'..') }}</td>
                         <td>{{ Str::words($product->name,4,'..') }}</td>
                         <td>{{ $product->old_price }}</td>
                           <td>{{ $product->new_price }}</td>
-                        <td><img src="{{ asset('storage/'.$product->default_image) }}" width="200"/></td>
+                        <td><img src="{{ asset('storage/'.$product->default_image) }}" width="200" height="200"/></td>
                           <td>
                               <div class="flex-lg-row">
                                   <a href="{{ route('products.edit',['product'=>$product]) }}" class="btn btn-success">
-                              Düzenle
-                            </a>
-                                  <a href="{{ route('products.display',['product'=>$product]) }}" class="btn btn-info">Göster</a>
-                              <a href="{{ route('products.delete',['product'=>$product]) }}" class="btn btn-primary" onclick="return confirm('Silmek istediğinizden emin misiniz?');">
-                                  Sil
+                                     <iconify-icon icon="tabler:edit" class="fs-7"></iconify-icon>
                                   </a>
+                                  <a href="{{ route('products.display',['product'=>$product]) }}" class="btn btn-info">
+                                      <iconify-icon icon="mdi:images" class="fs-7"></iconify-icon>
+                                  </a>
+                              <a href="{{ route('products.delete',['product'=>$product]) }}" class="btn btn-primary" onclick="return confirm('Silmek istediğinizden emin misiniz?');">
+                                  <iconify-icon icon="solar:trash-bin-minimalistic-line-duotone" class="fs-7"></iconify-icon>
+                              </a>
 
                               </div>
 

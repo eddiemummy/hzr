@@ -36,7 +36,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-
         $request->validate([
            'category_id' => 'required',
             'name' => 'string|required',
@@ -51,7 +50,7 @@ class ProductController extends Controller
             $path = Storage::disk('public')->put('product_images', $request->file('image'));
         }
 
-       $product = Product::create([
+        $product = Product::create([
            'category_id' => $request->get('category_id'),
             'name' => $request->get('name'),
             'description'=> $request->get('description'),

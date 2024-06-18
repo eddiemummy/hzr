@@ -25,7 +25,7 @@
                                 @csrf
                                 @method('PUT')
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="category_id">Kategori</label>
                                             <select id="category_id" name="category_id" class="form-control">
@@ -41,7 +41,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" name="name" placeholder="İsim"
                                                    value="{{ $product->name }}"/>
@@ -51,18 +51,8 @@
                                             <label for="name">İsim</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating mb-3">
-                                            <textarea type="text" class="form-control" name="description" placeholder="Ürün Açıklaması">{{ $product->description }}</textarea>
-                                            @error('description')
-                                            <p style="color:red; font-size: small">{{ $message }}</p>
-                                            @enderror
-                                            <label for="descriptiom">Ürün Açıklaması</label>
-                                        </div>
-                                    </div>
 
-
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-floating mb-3">
 
                                             <input type="number" name="old_price" class="form-control" placeholder="Eski Fiyat" value="{{ $product->old_price }}">
@@ -72,7 +62,7 @@
                                             <label for="old_price">Eski Fiyat</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-floating mb-3">
 
                                             <input type="number" name="new_price" class="form-control" placeholder="Yeni Fiyat" value="{{ $product->new_price }}">
@@ -82,12 +72,12 @@
                                             <label for="new_price">Yeni Fiyat</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="category_id">Renkler</label>
-
+                                            @php $colorList = explode(",", $product->colors); @endphp
                                             @foreach($colors as $color)
-                                                <input type="checkbox" name=colors[]" value="{!! $color->hex !!}"/> {!! $color->name !!}
+                                                <input type="checkbox" name=colors[]" @if(in_array($color->hex, $colorList)) checked @endif value="{!! $color->hex !!}"/> {!! $color->name !!}
                                             @endforeach
 
                                             @error('name')
@@ -95,6 +85,13 @@
                                             @enderror
                                         </div>
                                     </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-floating mb-3">
+                                            <textarea id="editor" name="description">{!! $product->description !!}</textarea>
+                                        </div>
+                                    </div>
+
                                     <div class="ms-auto mt-3 mt-md-0">
                                                 <button type="submit" class="btn btn-primary hstack gap-6">
                                                     Düzenle

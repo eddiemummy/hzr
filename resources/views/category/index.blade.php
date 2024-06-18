@@ -37,9 +37,12 @@
                           <td>
                               <div class="flex-lg-row">
                                   <a href="{{ route('categories.edit',['category'=>$category]) }}" class="btn btn-success">
-                              Düzenle
+                                      <iconify-icon icon="tabler:edit" class="fs-7"></iconify-icon>
                             </a>
-                                  <a href="{{ route('categories.delete',['category'=>$category]) }}" class="btn btn-primary" onclick="return confirm('Silmek istediğinizden emin misiniz?');">Sil</a>
+                                  <a href="{{ route('categories.delete',['category'=>$category]) }}" class="btn btn-primary" onclick="return confirm('Silmek istediğinizden emin misiniz?');">
+                                      <iconify-icon icon="solar:trash-bin-minimalistic-line-duotone" class="fs-7"></iconify-icon>
+
+                                  </a>
                                </div>
 
                           </td>

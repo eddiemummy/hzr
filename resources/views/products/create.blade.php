@@ -24,7 +24,7 @@
                             <form method="post" action="{{ route('products.store') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="category_id">Kategori</label>
                                             <select id="category_id" name="category_id" class="form-control">
@@ -40,18 +40,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6">
-                                        <div class="form-floating mb-3">
-                                            <textarea type="text" class="form-control" name="description" placeholder="Açıklama">{!! old('description') !!}</textarea>
-
-                                            @error('description')
-                                            <p style="color:red; font-size: small">{{ $message }}</p>
-                                            @enderror
-                                            <label for="body">Ürün Açıklaması</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" name="name" placeholder="İsim"
                                                    value="{{ old('name') }}"/>
@@ -61,7 +50,7 @@
                                             <label for="body">İsim</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-floating mb-3">
 
                                             <input type="number" name="old_price" class="form-control" placeholder="Eski Fiyat">
@@ -71,7 +60,7 @@
                                             <label for="old_price">Eski Fiyat</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-floating mb-3">
 
                                             <input type="number" name="new_price" class="form-control" placeholder="Yeni Fiyat">
@@ -81,7 +70,7 @@
                                             <label for="new_price">Yeni Fiyat</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="category_id">Renkler</label>
 
@@ -94,7 +83,14 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-6">
+
+                                    <div class="col-md-12">
+                                        <div class="form-floating mb-3">
+                                            <textarea id="editor" name="description"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
                                         <div class="d-md-flex align-items-center">
                                             <div class="mb-4">
                                                 <label for="image" class="form-label">Ana Görsel</label>
@@ -105,7 +101,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-6">
+
+                                    <div class="col-12">
                                         <div class="d-md-flex align-items-center">
                                             <div class="mb-4">
                                                 <label for="image" class="form-label">Diğer Görseller</label>

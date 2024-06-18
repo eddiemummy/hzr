@@ -13,6 +13,13 @@
     <!-- Core Css -->
     <link rel="stylesheet" href="{!! asset("assets/css/styles.css") !!}">
     <title>Huzur Yönetim Paneli</title>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
+    <style>
+        .ck-content {
+            height:200px !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -143,7 +150,7 @@
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="{{ route('dashboard.edit') }}" aria-expanded="false">
                             <div class="d-flex">
-                                <iconify-icon icon="solar:money-bag-outline"></iconify-icon>
+                                <iconify-icon icon="solar:phone-outline"></iconify-icon>
                             </div>
                             <span class="hide-menu">İletişim</span>
                         </a>
@@ -488,13 +495,6 @@
                                     </a>
                                     <a class="nav-link sun light-layout" href="javascript:void(0)">
                                         <iconify-icon icon="solar:sun-2-line-duotone" class="sun"></iconify-icon>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item nav-icon-hover-bg rounded-circle d-none d-lg-flex search-box">
-                                    <a class="nav-link d-none d-md-flex" href="javascript:void(0)"
-                                       data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <iconify-icon icon="solar:magnifer-linear"></iconify-icon>
                                     </a>
                                 </li>
                                 <!-- ------------------------------- -->
@@ -2564,96 +2564,6 @@
             </div>
         </div>
     </div>
-    <!--  Search Bar -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable modal-lg">
-            <div class="modal-content rounded-1">
-                <div class="modal-header border-bottom">
-                    <input type="search" class="form-control fs-3" placeholder="Search here" id="search">
-                    <a href="javascript:void(0)" data-bs-dismiss="modal" class="lh-1">
-                        <i class="ti ti-x fs-5 ms-3"></i>
-                    </a>
-                </div>
-                <div class="modal-body message-body" data-simplebar="">
-                    <h5 class="mb-0 fs-5 p-1">Quick Page Links</h5>
-                    <ul class="list mb-0 py-2">
-                        <li class="p-1 mb-1 px-2 rounded bg-hover-light-black">
-                            <a href="javascript:void(0)">
-                                <span class="h6 mb-1">Modern</span>
-                                <span class="fs-3 text-muted d-block">/dashboards/dashboard1</span>
-                            </a>
-                        </li>
-                        <li class="p-1 mb-1 px-2 rounded bg-hover-light-black">
-                            <a href="javascript:void(0)">
-                                <span class="h6 mb-1">Dashboard</span>
-                                <span class="fs-3 text-muted d-block">/dashboards/dashboard2</span>
-                            </a>
-                        </li>
-                        <li class="p-1 mb-1 px-2 rounded bg-hover-light-black">
-                            <a href="javascript:void(0)">
-                                <span class="h6 mb-1">Contacts</span>
-                                <span class="fs-3 text-muted d-block">/apps/contacts</span>
-                            </a>
-                        </li>
-                        <li class="p-1 mb-1 px-2 rounded bg-hover-light-black">
-                            <a href="javascript:void(0)">
-                                <span class="h6 mb-1">Posts</span>
-                                <span class="fs-3 text-muted d-block">/apps/blog/posts</span>
-                            </a>
-                        </li>
-                        <li class="p-1 mb-1 px-2 rounded bg-hover-light-black">
-                            <a href="javascript:void(0)">
-                                <span class="h6 mb-1">Detail</span>
-                                <span class="fs-3 text-muted d-block">/apps/blog/detail/streaming-video-way-before-it-was-cool-go-dark-tomorrow</span>
-                            </a>
-                        </li>
-                        <li class="p-1 mb-1 px-2 rounded bg-hover-light-black">
-                            <a href="javascript:void(0)">
-                                <span class="h6 mb-1">Shop</span>
-                                <span class="fs-3 text-muted d-block">/apps/ecommerce/shop</span>
-                            </a>
-                        </li>
-                        <li class="p-1 mb-1 px-2 rounded bg-hover-light-black">
-                            <a href="javascript:void(0)">
-                                <span class="h6 mb-1">Modern</span>
-                                <span class="fs-3 text-muted d-block">/dashboards/dashboard1</span>
-                            </a>
-                        </li>
-                        <li class="p-1 mb-1 px-2 rounded bg-hover-light-black">
-                            <a href="javascript:void(0)">
-                                <span class="h6 mb-1">Dashboard</span>
-                                <span class="fs-3 text-muted d-block">/dashboards/dashboard2</span>
-                            </a>
-                        </li>
-                        <li class="p-1 mb-1 px-2 rounded bg-hover-light-black">
-                            <a href="javascript:void(0)">
-                                <span class="h6 mb-1">Contacts</span>
-                                <span class="fs-3 text-muted d-block">/apps/contacts</span>
-                            </a>
-                        </li>
-                        <li class="p-1 mb-1 px-2 rounded bg-hover-light-black">
-                            <a href="javascript:void(0)">
-                                <span class="h6 mb-1">Posts</span>
-                                <span class="fs-3 text-muted d-block">/apps/blog/posts</span>
-                            </a>
-                        </li>
-                        <li class="p-1 mb-1 px-2 rounded bg-hover-light-black">
-                            <a href="javascript:void(0)">
-                                <span class="h6 mb-1">Detail</span>
-                                <span class="fs-3 text-muted d-block">/apps/blog/detail/streaming-video-way-before-it-was-cool-go-dark-tomorrow</span>
-                            </a>
-                        </li>
-                        <li class="p-1 mb-1 px-2 rounded bg-hover-light-black">
-                            <a href="javascript:void(0)">
-                                <span class="h6 mb-1">Shop</span>
-                                <span class="fs-3 text-muted d-block">/apps/ecommerce/shop</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 <div class="dark-transparent sidebartoggler"></div>
@@ -2673,6 +2583,7 @@
 
 
 <!-- solar icons -->
+<script src="{!! asset("assets/js/icon.js") !!}"></script>
 <script src="{!! asset("npm/iconify-icon%401.0.8/dist/iconify-icon.min.js") !!}"></script>
 <script src="{!! asset("assets/libs/datatables.net/js/jquery.dataTables.min.js") !!}"></script>
 <script src="{!! asset("assets/js/datatable/datatable-advanced.init.js") !!}"></script>
@@ -2683,6 +2594,13 @@
 <script src="{!! asset("buttons/2.4.2/js/buttons.html5.min.js") !!}"></script>
 <script src="{!! asset("buttons/2.4.2/js/buttons.print.min.js") !!}"></script>
 
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 
 </body>
 

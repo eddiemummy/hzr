@@ -41,10 +41,13 @@
                          <td>
                               <div class="flex-lg-row">
                                   <a href="{{ route('colors.edit',['color'=>$color]) }}" class="btn btn-success">
-                              Düzenle
+                                      <iconify-icon icon="tabler:edit" class="fs-7"></iconify-icon>
+
                             </a>
-                                  <a href="{{ route('colors.delete',['color'=>$color]) }}" class="btn btn-primary" onclick="return confirm('Silmek istediğinizden emin misiniz?');">Sil</a>
-                               </div>
+                                  <a href="{{ route('colors.delete',['color'=>$color]) }}" class="btn btn-primary" onclick="return confirm('Silmek istediğinizden emin misiniz?');">
+                                      <iconify-icon icon="solar:trash-bin-minimalistic-line-duotone" class="fs-7"></iconify-icon>
+                                  </a>
+                              </div>
 
                           </td>
                       </tr>

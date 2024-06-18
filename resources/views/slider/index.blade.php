@@ -23,9 +23,7 @@
                       <!-- start row -->
                       <tr>
                         <th>Başlık</th>
-                        <th>Vurgu</th>
                         <th>İçerik</th>
-                        <th>Buton</th>
                         <th>Link</th>
                         <th>Eylem</th>
                       </tr>
@@ -36,16 +34,18 @@
                       @foreach($sliders as $slider)
                       <tr>
                         <td>{{ Str::words($slider->title,4,'..') }}</td>
-                        <td>{{ Str::words($slider->highlight,4,'..') }}</td>
-                        <td>{{ Str::words($slider->body,4,'..') }}</td>
                         <td>{{ Str::words($slider->button,4,'..') }}</td>
                         <td>{{ $slider->link }}</td>
                           <td>
                               <div class="flex-lg-row">
                                   <a href="{{ route('sliders.edit',['slider'=>$slider]) }}" class="btn btn-success">
-                              Düzenle
-                            </a>
-                                  <a href="{{ route('sliders.delete',['slider'=>$slider]) }}" class="btn btn-primary" onclick="return confirm('Silmek istediğinizden emin misiniz?');">Sil</a>
+                                      <iconify-icon icon="tabler:edit" class="fs-7"></iconify-icon>
+
+                                  </a>
+                                  <a href="{{ route('sliders.delete',['slider'=>$slider]) }}" class="btn btn-primary" onclick="return confirm('Silmek istediğinizden emin misiniz?');">
+                                      <iconify-icon icon="solar:trash-bin-minimalistic-line-duotone" class="fs-7"></iconify-icon>
+
+                                  </a>
                                </div>
 
                           </td>
