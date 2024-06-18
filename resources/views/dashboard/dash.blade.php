@@ -124,6 +124,15 @@
                     </li>
 
                     <li class="sidebar-item">
+                        <a class="sidebar-link" href="{{ route('dashboard.system') }}" aria-expanded="false">
+                            <div class="d-flex">
+                                <iconify-icon icon="solar:money-bag-outline"></iconify-icon>
+                            </div>
+                            <span class="hide-menu">Site Ayarları</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
                         <a class="sidebar-link" href="{{ route('dashboard.updateAbout') }}" aria-expanded="false">
                             <div class="d-flex">
                                 <iconify-icon icon="solar:money-bag-outline"></iconify-icon>

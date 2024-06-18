@@ -23,6 +23,7 @@
                       <!-- start row -->
                       <tr>
                         <th>Kategori</th>
+                        <th>Ürün Açıklaması</th>
                         <th>İsim</th>
                         <th>Eski Fiyat</th>
                         <th>Yeni Fiyat</th>
@@ -36,6 +37,7 @@
                       @foreach($products as $product)
                       <tr>
                         <td>{{ Str::words($product->category->name,4,'..') }}</td>
+                          <td>{{ Str::words($product->description,4,'..') }}</td>
                         <td>{{ Str::words($product->name,4,'..') }}</td>
                         <td>{{ $product->old_price }}</td>
                           <td>{{ $product->new_price }}</td>

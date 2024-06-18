@@ -39,6 +39,18 @@
                                             @enderror
                                         </div>
                                     </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <textarea type="text" class="form-control" name="description" placeholder="Açıklama">{!! old('description') !!}</textarea>
+
+                                            @error('description')
+                                            <p style="color:red; font-size: small">{{ $message }}</p>
+                                            @enderror
+                                            <label for="body">Ürün Açıklaması</label>
+                                        </div>
+                                    </div>
+
                                     <div class="col-md-6">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" name="name" placeholder="İsim"
@@ -46,7 +58,7 @@
                                             @error('name')
                                             <p style="color:red; font-size: small">{{ $message }}</p>
                                             @enderror
-                                            <label for="body">Tür</label>
+                                            <label for="body">İsim</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">

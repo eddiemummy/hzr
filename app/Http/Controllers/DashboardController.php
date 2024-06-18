@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Contact;
+use App\Models\SiteSetting;
 use App\Models\Slider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -26,7 +27,7 @@ class DashboardController extends Controller
         if (Auth::attempt($validate,$request->remember)) {
             return redirect()->route('dashboard')->with('success','You have been logged in');
         } else {
-            return redirect()->intended('dashboard')->with('error', 'Invalid email or password');
+            return redirect()->route('dashboard')->with('error', 'Invalid email or password');
         }
 
 
@@ -93,4 +94,25 @@ class DashboardController extends Controller
         return view('posts.about', ['about' => $about]);
     }
 
+    public function system ()
+    {
+    $setting = SiteSetting::first();
+    return view("dashboard.system", ['setting' => $setting]);
+    }
+
+    public function updateSystem(Request $request) {
+        $request->validate([
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'keywords' => 'required|string',
+        ]);
+         DB::table('site_settings')
+           ->where('id', 1)
+           ->update([
+               'title' => $request->get('title'),
+               'description' => $request->get('description'),
+               'keywords' => $request->get('keywords'),
+           ]);
+        return back()->with('success', 'Your information has been updated');
+    }
 }

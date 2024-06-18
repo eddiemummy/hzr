@@ -36,13 +36,16 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
            'category_id' => 'required',
             'name' => 'string|required',
+            'description' => 'required',
             'old_price' => 'numeric|nullable',
             'new_price' => 'numeric|required',
-            'default_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048|required',
+            'default_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+
         $path = null;
         if($request->hasFile('image')) {
             $path = Storage::disk('public')->put('product_images', $request->file('image'));
@@ -51,6 +54,7 @@ class ProductController extends Controller
        $product = Product::create([
            'category_id' => $request->get('category_id'),
             'name' => $request->get('name'),
+            'description'=> $request->get('description'),
             'slug' => Str::slug($request->get('name'),'-'),
             'old_price' => $request->get('old_price'),
             'new_price' => $request->get('new_price'),
@@ -73,7 +77,7 @@ class ProductController extends Controller
         $cat = $product->category;
         $cat->count += 1;
         $cat->save();
-        return redirect()->intended('dashboard/products');
+        return redirect()->intended('/dashboard/products');
     }
 
     /**
@@ -102,6 +106,7 @@ class ProductController extends Controller
          $request->validate([
            'category_id' => 'required',
             'name' => 'string|required',
+            'description' => 'required',
             'old_price' => 'numeric|nullable',
             'new_price' => 'numeric|required',
         ]);
@@ -109,6 +114,7 @@ class ProductController extends Controller
         $product->update([
             'category_id' => $request->category_id,
             'name' => $request->name,
+            'description' => $request->description,
             'old_price' => $request->old_price,
             'new_price' => $request->new_price
         ]);

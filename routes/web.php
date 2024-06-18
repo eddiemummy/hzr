@@ -31,6 +31,9 @@ Route::get('/about',[DashboardController::class,'aboutStore'])->name('about');
 
 Route::middleware('auth')->group(function(){
 Route::resource('dashboard/colors', ColorController::class);
+Route::get("dashboard/system",[DashboardController::class,'system'])->name("dashboard.system");
+Route::put("dashboard/system",[DashboardController::class,'updateSystem'])->name("dashboard.updateSystem");
+
 Route::get('/dashboard/products',[ProductController::class,'index'])->name('products.index');
 Route::get('/dashboard/products/create',[ProductController::class,'create'])->name('products.create');
 Route::post('/dashboard/products',[ProductController::class,'store'])->name('products.store');

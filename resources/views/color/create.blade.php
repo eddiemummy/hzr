@@ -25,11 +25,11 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-floating mb-3">
-                          <input type="text" class="form-control" name="name" placeholder="İism" value="{{ old('name') }}">
+                          <input type="text" class="form-control" name="name" placeholder="İsim" value="{{ old('name') }}">
                             @error('name')
                             <p style="color:red; font-size: small">{{ $message }}</p>
                             @enderror
-                          <label for="title">Başlık</label>
+                          <label for="title">İsim</label>
                         </div>
                       </div>
                       <div class="col-md-6">

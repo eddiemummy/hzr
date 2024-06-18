@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="shadow-none position-relative overflow-hidden mb-4">
                 <div class="d-sm-flex d-block justify-content-between align-items-center">
-                    <h5 class="mb-0 fw-semibold text-uppercase"> ÜRÜN DÜZENLE</h5>
+                    <h5 class="mb-0 fw-semibold text-uppercase"> Site Ayarları</h5>
                     <nav aria-label="breadcrumb" class="d-flex align-items-center">
 
 
@@ -21,42 +21,52 @@
                     <!-- start Basic Form -->
                     <div class="card">
                         <div class="card-body">
-                            <form method="post" action="{{ route('colors.update',['color'=>$color]) }}">
+                            <form method="post" action="{{ route('dashboard.updateSystem') }}">
                                 @csrf
-                                @method('PUT')
+                                @method("put")
                                 <div class="row">
-                                   <div class="col-md-6">
+
+                                    <div class="col-md-12">
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" name="name" placeholder="İsim"
-                                                   value="{{ $color->name }}"/>
-                                            @error('name')
+                                            <input type="text" class="form-control" name="title" placeholder="Başlık"
+                                                   value="{{ $setting->title }}"/>
+                                            @error('title')
                                             <p style="color:red; font-size: small">{{ $message }}</p>
                                             @enderror
-                                            <label for="body">İsim</label>
+                                            <label for="title">Başlık</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-floating mb-3">
-
-                                            <input type="color" name="hex" class="form-control"  value="{{ $color->hex }}">
-                                            @error('hex')
+                                            <input type="text" class="form-control" name="description" placeholder="Açıklama"
+                                                   value="{{ $setting->description }}"/>
+                                            @error('description')
                                             <p style="color:red; font-size: small">{{ $message }}</p>
                                             @enderror
-                                            <label for="old_price">Hex Kodu</label>
+                                            <label for="description">Açıklama</label>
                                         </div>
                                     </div>
 
-
+                                    <div class="col-md-12">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" name="keywords" placeholder="Anahtar Kelimeler"
+                                                   value="{{ $setting->keywords }}"/>
+                                            @error('keywords')
+                                            <p style="color:red; font-size: small">{{ $message }}</p>
+                                            @enderror
+                                            <label for="keywords">Anahtar Kelimeler</label>
+                                        </div>
+                                    </div>
                                     <div class="ms-auto mt-3 mt-md-0">
-                                                <button type="submit" class="btn btn-primary hstack gap-6">
-                                                    Düzenle
+                                                <button type="submit" class="btn btn-info hstack gap-6">
+                                                    Değiştir
                                                 </button>
                                             </div>
+                                    </div>
 
-                                </div>
                             </form>
                         </div>
-                    </div>
+
                     <!-- end Basic Form -->
                 </div>
 
