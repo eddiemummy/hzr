@@ -8,13 +8,8 @@
 									<h4 class="title-1 title-border text-uppercase mb-30">İLETİŞİM BİLGİLERİ</h4>
 									<ul>
 										<li>
-											<i class="zmdi zmdi-pin"></i>
-											<span>{{ $contact->address }}</span>
-
-										</li>
-										<li>
 											<i class="zmdi zmdi-phone"></i>
-											<span>{{ $contact->phone }}</span>
+											<span>{{ $contact->phone }} </span>
 
 										</li>
 										<li>
@@ -24,20 +19,17 @@
 										</li>
 									</ul>
 								</div>
-								<div class="send-message mt-60">
-									<form id="contact-form" action="https://whizthemes.com/mail-php/other/mail.php">
-										<h4 class="title-1 title-border text-uppercase mb-30">Mesaj Gönder</h4>
-										<input type="text" name="con_name" placeholder="İsminiz...">
-										<input type="text" name="con_email" placeholder="Emailiniz...">
-										<textarea class="custom-textarea" name="con_message" placeholder="Yorumunuz..."></textarea>
-										<button class="button-one submit-button mt-20" data-text="submit message" type="submit">GÖNDER</button>
-										<p class="form-message"></p>
-									</form>
-								</div>
 							</div>
 							<div class="col-lg-8 col-md-7 mt-xs-30">
 								<div class="map-area">
-									<div id="googleMap" style="width:100%;height:600px;"></div>
+                                        <form id="contact-form" action="https://whizthemes.com/mail-php/other/mail.php">
+                                            <h4 class="title-1 title-border text-uppercase mb-30">Mesaj Gönder</h4>
+                                            <input type="text" name="con_name" placeholder="İsminiz...">
+                                            <input type="text" name="con_email" placeholder="Emailiniz...">
+                                            <textarea class="custom-textarea" name="con_message" placeholder="Yorumunuz..."></textarea>
+                                            <button class="button-one submit-button mt-20" data-text="submit message" type="submit">GÖNDER</button>
+                                            <p class="form-message"></p>
+                                        </form>
 								</div>
 							</div>
 						</div>

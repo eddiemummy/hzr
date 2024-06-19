@@ -45,84 +45,17 @@
 							<li><a href="{{ route('home') }}">Ana Sayfa</a>
 
 							</li>
-							<li><a href="shop.html">products</a>
-								<div class="mega-menu menu-scroll">
-									<div class="table">
-										<div class="table-cell">
-											<div class="half-width">
-												<ul>
-													<li class="menu-title">best brands</li>
-													<li><a href="#">henning koppel</a></li>
-													<li><a href="#">jehs + Laub</a></li>
-													<li><a href="#">vicke lindstrand</a></li>
-													<li><a href="#">don chadwick</a></li>
-													<li><a href="#">akiko kuwahata</a></li>
-													<li><a href="#">barbro berlin</a></li>
-													<li><a href="#">cecilia hall</a></li>
-													<li><a href="#">don chadwick</a></li>
-												</ul>
-											</div>
-											<div class="half-width">
-												<ul>
-													<li class="menu-title">popular brands</li>
-													<li><a href="#">akiko kuwahata</a></li>
-													<li><a href="#">barbro berlin</a></li>
-													<li><a href="#">cecilia hall</a></li>
-													<li><a href="#">don chadwick</a></li>
-													<li><a href="#">henning koppel</a></li>
-													<li><a href="#">jehs + Laub</a></li>
-													<li><a href="#">vicke lindstrand</a></li>
-													<li><a href="#">don chadwick</a></li>
-												</ul>
-											</div>
-											<div class="full-width">
-												<div class="mega-menu-img">
-													<a href="single-product.html"><img src="img/megamenu/1.jpg" alt=""></a>
-												</div>
-											</div>
-											<div class="pb-80"></div>
-										</div>
-									</div>
-								</div>
-							</li>
-                            <li><a href="#">Shortcodes</a>
+                            <li><a href="{{ route('about') }}">ÜRÜNLERİMİZ</a></li>
+                            <li><a href="#">KATEGORİLER</a>
                                 <div class="sub-menu menu-scroll">
                                     <ul>
-                                        <li class="menu-title">Shortcodes</li>
-                                        <li><a href="elements-accordions.html">Accordion</a></li>
-                                        <li><a href="elements-toggles.html">Toggles</a></li>
-                                        <li><a href="elements-tab.html">Tab</a></li>
-                                        <li><a href="elements-product-tab.html">Product Tab</a></li>
-                                        <li><a href="elements-product-tab-2.html">Product Tab 2</a></li>
-                                        <li><a href="elements-carousel.html">product carousel</a></li>
-                                        <li><a href="elements-carousel-2.html">product carousel 2</a></li>
-                                        <li><a href="elements-featured-product.html">Featured Product</a></li>
-                                        <li><a href="elements-featured-product-2.html">Featured Product 2</a></li>
-                                        <li><a href="elements-button.html">Button</a></li>
-                                        <li><a href="elements-table.html">Table</a></li>
-                                        <li><a href="elements-progress-bars.html">Progress Bar</a></li>
-                                        <li><a href="elements-blog.html">Blog</a></li>
-                                        <li><a href="elements-blog-2.html">Blog - 2</a></li>
-                                        <li><a href="elements-team.html">Team</a></li>
-                                        <li><a href="elements-footer.html">Footer</a></li>
-                                        <li><a href="elements-footer-2.html">Footer 2</a></li>
-                                        <li><a href="elements-map.html">Map</a></li>
+                                        <li class="menu-title">KATEGORİLER</li>
+                                        @foreach(getCategories() as $category)
+                                        <li><a href="#">{!! $category->name !!}</a></li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </li>
-							<li><a href="shop-sidebar.html">accesories</a></li>
-							<li><a href="shop-list.html">lookbook</a></li>
-							<li><a href="blog.html">blog</a></li>
-							<li><a href="#">pages</a>
-								<div class="sub-menu menu-scroll">
-									<ul>
-										<li class="menu-title">Page's</li>
-
-										<li><a href="about.html">Hakkımızda</a></li>
-										<li><a href="contact.html">İletişim</a></li>
-									</ul>
-								</div>
-							</li>
 							<li><a href="{{ route('about') }}">Hakkımızda</a></li>
 							<li><a href="{{ route('contact') }}">İletişim</a></li>
 						</ul>

@@ -9,9 +9,9 @@
 								</div>
 							</div>
 							<div class="col-lg-6">
-								<div class="about-photo bg-dark-white">
+								<div class="about-photo">
 									<h4 class="title-1 title-border text-uppercase mb-30">Hakkımızda</h4>
-									<p>{{ $about->body }}</p>
+									<p>{!!  $about->body  !!}</p>
 								</div>
 							</div>
 						</div>

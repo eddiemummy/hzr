@@ -26,9 +26,7 @@
 			<!-- PRODUCT-AREA START -->
 			<x-product/>
 			<!-- PRODUCT-AREA END -->
-			<!-- DISCOUNT-PRODUCT START -->
-			<x-discount/>
-			<!-- DISCOUNT-PRODUCT END -->
+
 			<!-- PURCHASE-ONLINE-AREA START -->
 			<x-purchase/>
 			<!-- PURCHASE-ONLINE-AREA END -->
