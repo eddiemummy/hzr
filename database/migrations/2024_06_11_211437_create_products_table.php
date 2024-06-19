@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignIdFor(Category::class)->constrained()->noActionOnDelete();
             $table->string('name');
             $table->text('description');
+            $table->string("segment");
             $table->string('slug');
             $table->float('old_price')->nullable();
             $table->float('new_price');

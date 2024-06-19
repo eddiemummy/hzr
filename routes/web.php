@@ -4,9 +4,10 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\InterfaceController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SliderController;
+use App\Models\NewsLetter;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,12 +21,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/','posts.index')->name('home');
+Route::get('/',[HomeController::class,'index'])->name('home');
+Route::get('/iletisim',[HomeController::class,'contact'])->name('contact');
+Route::get('/hakkimizda',[HomeController::class,'aboutStore'])->name('about');
+Route::post('/news',[HomeController::class,'store'])->name('news.store');
+
 Route::view('/dashboard/login','dashboard.login')->name('login');
 Route::post('/dashboard/login',[DashboardController::class,'login'])->name('dashboard.login');
-Route::get('/contact',[DashboardController::class,'contact'])->name('dashboard.contact');
-Route::get('/about',[DashboardController::class,'aboutStore'])->name('about');
-
 
 
 
@@ -53,6 +55,8 @@ Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard')
 
 Route::get('/dashboard/logout',[DashboardController::class,'logout'])->name('dashboard.logout');
 
+Route::get('/dashboard/news',[DashboardController::class,'displayNews'])->name('dashboard.news');
+
 Route::get('/dashboard/profile/edit',[DashboardController::class,'edit'])->name('dashboard.edit');
 Route::put('/dashboard/profile/edit',[DashboardController::class,'update'])->name('dashboard.update');
 Route::get('/dashboard/profile/password',[AuthController::class,'edit'])->name('dashboard.password');
@@ -68,6 +72,5 @@ Route::get('/dashboard/sliders/delete/{slider}',[SliderController::class,'delete
 
 Route::resource('dashboard/categories', CategoryController::class);
 Route::get('/dashboard/categories/delete/{category}',[CategoryController::class,'delete'])->name('categories.delete');
-Route::get('/',[InterfaceController::class,'slider'])->name('sliders');
 
 });

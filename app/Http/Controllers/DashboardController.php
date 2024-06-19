@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Contact;
+use App\Models\NewsLetter;
 use App\Models\SiteSetting;
 use App\Models\Slider;
 use Illuminate\Http\RedirectResponse;
@@ -40,12 +41,7 @@ class DashboardController extends Controller
         return redirect()->route('dashboard.login')->with('success', 'You have been logged out.');
     }
 
-    public function contact() {
-        $contact = Contact::latest()->first();
-        return view('posts.contact', ['contact' => $contact]);
-    }
-
-       public function edit() {
+    public function edit() {
         $contact = Contact::latest()->first();
         return view('dashboard.edit', ['contact' => $contact]);
     }
@@ -66,9 +62,9 @@ class DashboardController extends Controller
         return back()->with('success', 'Your information has been updated');
     }
     public function about() {
-        $about = About::latest()->first();
-        return view('dashboard.edit-about', ['about' => $about]);
-    }
+            $about = About::latest()->first();
+            return view('dashboard.edit-about', ['about' => $about]);
+        }
     public function updateAbout(Request $request) {
         $request->validate([
             'body' => 'required',
@@ -89,10 +85,7 @@ class DashboardController extends Controller
         $about->save();
         return back()->with('success', 'Your information has been updated');
     }
-    public function aboutStore() {
-        $about = About::first();
-        return view('posts.about', ['about' => $about]);
-    }
+
 
     public function system ()
     {
@@ -114,5 +107,10 @@ class DashboardController extends Controller
                'keywords' => $request->get('keywords'),
            ]);
         return back()->with('success', 'Your information has been updated');
+    }
+    public function displayNews()
+    {
+        $news = NewsLetter::latest()->paginate(10);
+        return view("dashboard.news", ['news' => $news]);
     }
 }

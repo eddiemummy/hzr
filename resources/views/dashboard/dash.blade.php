@@ -146,6 +146,16 @@
                             <span class="hide-menu">Hakkımızda</span>
                         </a>
                     </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{{ route('dashboard.news') }}" aria-expanded="false">
+                            <div class="d-flex">
+                                <iconify-icon icon="solar:user-circle-line-duotone"></iconify-icon>
+                            </div>
+                            <span class="hide-menu">Haber Bülteni</span>
+                        </a>
+                    </li>
+
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="{{ route('dashboard.edit') }}" aria-expanded="false">
                             <div class="d-flex">
