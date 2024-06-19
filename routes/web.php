@@ -75,5 +75,6 @@ Route::get('/dashboard/sliders/delete/{slider}',[SliderController::class,'delete
 
 Route::resource('dashboard/categories', CategoryController::class);
 Route::get('/dashboard/categories/delete/{category}',[CategoryController::class,'delete'])->name('categories.delete');
-
+Route::get('/dashboard/banner',[DashboardController::class,'banner'])->name('banner');
+Route::put('/dashboard/banner',[DashboardController::class,'updateBanner'])->name('dashboard.banner');
 });

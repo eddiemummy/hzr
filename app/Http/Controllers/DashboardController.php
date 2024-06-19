@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Banner;
 use App\Models\Contact;
 use App\Models\NewsLetter;
 use App\Models\SiteSetting;
@@ -120,5 +121,25 @@ class DashboardController extends Controller
     {
         $news = NewsLetter::latest()->paginate(10);
         return view("dashboard.news", ['news' => $news]);
+    }
+
+    public function banner() {
+        $banner = Banner::first();
+        return view('dashboard.banner',compact('banner'));
+    }
+    public function updateBanner(Request $request, Banner $banner) {
+         $request->validate([
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        $banner = Banner::first();
+        $path = $banner->image ?? null;
+        if ($request->hasFile('image')) {
+
+            $path = Storage::disk('public')->putFile('banner_images', $request->file('image'));
+        }
+
+        $banner->image=$path;
+        $banner->save();
+        return back()->with('success', 'Your information has been updated');
     }
 }

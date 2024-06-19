@@ -157,6 +157,15 @@
                     </li>
 
                     <li class="sidebar-item">
+                        <a class="sidebar-link" href="{{ route('banner') }}" aria-expanded="false">
+                            <div class="d-flex">
+                                <iconify-icon icon="solar:buildings-2-linear" class="aside-icon"></iconify-icon>
+                            </div>
+                            <span class="hide-menu">Reklam</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
                         <a class="sidebar-link" href="{{ route('dashboard.edit') }}" aria-expanded="false">
                             <div class="d-flex">
                                 <iconify-icon icon="solar:phone-outline"></iconify-icon>
