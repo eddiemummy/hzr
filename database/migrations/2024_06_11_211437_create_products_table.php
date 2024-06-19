@@ -23,6 +23,7 @@ return new class extends Migration
             $table->float('new_price');
             $table->string("default_image");
             $table->string('colors');
+            $table->integer('hit')->default(0);
             $table->timestamps();
         });
     }

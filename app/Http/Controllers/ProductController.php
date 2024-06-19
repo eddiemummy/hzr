@@ -58,7 +58,8 @@ class ProductController extends Controller
             'old_price' => $request->get('old_price'),
             'new_price' => $request->get('new_price'),
             'default_image' => $path,
-            'colors' => implode(",", $request->get('colors'))
+            'colors' => implode(",", $request->get('colors')),
+            'segment' => implode(",", $request->get('segment'))
        ]);
 
 
@@ -115,7 +116,10 @@ class ProductController extends Controller
             'name' => $request->name,
             'description' => $request->description,
             'old_price' => $request->old_price,
-            'new_price' => $request->new_price
+            'new_price' => $request->new_price,
+            'colors' => implode(",", $request->get('colors')),
+            'segment' => implode(",", $request->get('segment'))
+
         ]);
          return redirect()->route('products.index');
     }

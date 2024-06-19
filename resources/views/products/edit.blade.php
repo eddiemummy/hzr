@@ -92,6 +92,20 @@
                                         </div>
                                     </div>
 
+                                    <div class="col-md-12">
+                                        <div class="mb-3">
+                                            <label for="category_id">Nerelerde Gözüksün?</label>
+                                            @php $segments = explode(",", $product->segment) @endphp
+                                            <input type="checkbox" name=segment[]" @if(in_array("highlight", $segments)) checked @endif value="highlight"/> Öne Çıkanlar
+                                            <input type="checkbox" name=segment[]" @if(in_array("best_seller", $segments)) checked @endif value="best_seller"/> En Çok Satanlar
+                                            <input type="checkbox" name=segment[]" @if(in_array("discount", $segments)) checked @endif value="discount"/> İndirimli
+
+                                            @error('name')
+                                            <p style="color:red; font-size: small">{{ $message }}</p>
+                                            @enderror
+                                        </div>
+                                    </div>
+
                                     <div class="ms-auto mt-3 mt-md-0">
                                                 <button type="submit" class="btn btn-success hstack gap-6">
                                                     <iconify-icon icon="tabler:edit" class="fs-7"></iconify-icon>

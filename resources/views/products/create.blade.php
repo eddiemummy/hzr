@@ -90,6 +90,19 @@
                                         </div>
                                     </div>
 
+                                    <div class="col-md-12">
+                                        <div class="mb-3">
+                                            <label for="category_id">Nerelerde Gözüksün?</label>
+                                            <input type="checkbox" name=segment[]" value="highlight"/> Öne Çıkanlar
+                                            <input type="checkbox" name=segment[]" value="best_seller"/> En Çok Satanlar
+                                            <input type="checkbox" name=segment[]" value="discount"/> İndirimli
+
+                                            @error('name')
+                                            <p style="color:red; font-size: small">{{ $message }}</p>
+                                            @enderror
+                                        </div>
+                                    </div>
+
                                     <div class="col-12">
                                         <div class="d-md-flex align-items-center">
                                             <div class="mb-4">

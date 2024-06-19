@@ -150,9 +150,9 @@
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="{{ route('dashboard.news') }}" aria-expanded="false">
                             <div class="d-flex">
-                                <iconify-icon icon="solar:user-circle-line-duotone"></iconify-icon>
+                                <iconify-icon icon="solar:mailbox-line-duotone"></iconify-icon>
                             </div>
-                            <span class="hide-menu">Haber Bülteni</span>
+                            <span class="hide-menu">E-Bülten Listesi</span>
                         </a>
                     </li>
 
