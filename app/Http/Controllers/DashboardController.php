@@ -6,6 +6,8 @@ use App\Models\About;
 use App\Models\Banner;
 use App\Models\Contact;
 use App\Models\NewsLetter;
+use App\Models\Product;
+use App\Models\Review;
 use App\Models\SiteSetting;
 use App\Models\Slider;
 use Illuminate\Http\RedirectResponse;
@@ -141,5 +143,10 @@ class DashboardController extends Controller
         $banner->image=$path;
         $banner->save();
         return back()->with('success', 'Your information has been updated');
+    }
+    public function review() {
+        $reviews = Review::latest()->paginate(10);
+        return view('dashboard.review',compact('reviews'));
+
     }
 }

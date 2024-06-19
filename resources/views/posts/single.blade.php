@@ -42,14 +42,6 @@
 								<div class="product-info">
 									<div class="fix">
 										<h4 class="post-title floatleft">dummy Product name</h4>
-										<span class="pro-rating floatright">
-											<a href="#"><i class="zmdi zmdi-star"></i></a>
-											<a href="#"><i class="zmdi zmdi-star"></i></a>
-											<a href="#"><i class="zmdi zmdi-star"></i></a>
-											<a href="#"><i class="zmdi zmdi-star-half"></i></a>
-											<a href="#"><i class="zmdi zmdi-star-half"></i></a>
-											<span>( 27 Rating )</span>
-										</span>
 									</div>
 									<div class="fix mb-20">
 										<span class="pro-price">$ 56.20</span>
@@ -70,16 +62,7 @@
 									</div>
 									<!-- color end -->
 									<!-- Size start -->
-									<div class="size-filter single-pro-size mb-35 clearfix">
-										<ul>
-											<li><span class="color-title text-capitalize">size</span></li>
-											<li><a href="#">M</a></li>
-											<li><a class="active" href="#">S</a></li>
-											<li><a href="#">L</a></li>
-											<li><a href="#">SL</a></li>
-											<li><a href="#">XL</a></li>
-										</ul>
-									</div>
+
 									<!-- Size end -->
 									<div class="clearfix">
 										<div class="cart-plus-minus">
@@ -125,8 +108,7 @@
 									<ul class="nav d-block">
 										<li><a href="#description" data-bs-toggle="tab">Description</a></li>
 										<li><a class="active" href="#reviews" data-bs-toggle="tab">Reviews</a></li>
-										<li><a href="#information" data-bs-toggle="tab">Information</a></li>
-										<li><a href="#tags" data-bs-toggle="tab">Tags</a></li>
+
 									</ul>
 								</div>
 							</div>
@@ -144,7 +126,7 @@
 									<div class="tab-pane active" id="reviews">
 										<div class="pro-tab-info pro-reviews">
 											<div class="customer-review mb-60">
-												<h3 class="tab-title title-border mb-30">Customer review</h3>
+												<h3 class="tab-title title-border mb-30">KULLANICI YORUMLARI</h3>
 												<ul class="product-comments clearfix">
 													<li class="mb-30">
 														<div class="pro-reviewer">
@@ -156,28 +138,7 @@
 																	<h5 class="text-uppercase mb-0"><strong>Gerald Barnes</strong></h5>
 																	<p class="reply-date">27 Jun, 2021 at 2:30pm</p>
 																</div>
-																<div class="comment-reply floatright">
-																	<a href="#"><i class="zmdi zmdi-mail-reply"></i></a>
-																	<a href="#"><i class="zmdi zmdi-close"></i></a>
-																</div>
-															</div>
-															<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-														</div>
-													</li>
-													<li class="threaded-comments">
-														<div class="pro-reviewer">
-															<img src="img/reviewer/1.jpg" alt="">
-														</div>
-														<div class="pro-reviewer-comment">
-															<div class="fix">
-																<div class="floatleft mbl-center">
-																	<h5 class="text-uppercase mb-0"><strong>Gerald Barnes</strong></h5>
-																	<p class="reply-date">27 Jun, 2021 at 2:30pm</p>
-																</div>
-																<div class="comment-reply floatright">
-																	<a href="#"><i class="zmdi zmdi-mail-reply"></i></a>
-																	<a href="#"><i class="zmdi zmdi-close"></i></a>
-																</div>
+
 															</div>
 															<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
 														</div>
@@ -186,38 +147,6 @@
 											</div>
 											<div class="leave-review">
 												<h3 class="tab-title title-border mb-30">Leave your reviw</h3>
-												<div class="your-rating mb-30">
-													<p class="mb-10"><strong>Your Rating</strong></p>
-													<span>
-														<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-													</span>
-													<span class="separator">|</span>
-													<span>
-														<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-														<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-													</span>
-													<span class="separator">|</span>
-													<span>
-														<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-														<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-														<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-													</span>
-													<span class="separator">|</span>
-													<span>
-														<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-														<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-														<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-														<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-													</span>
-													<span class="separator">|</span>
-													<span>
-														<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-														<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-														<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-														<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-														<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-													</span>
-												</div>
 												<div class="reply-box">
 													<form action="#">
 														<div class="row">

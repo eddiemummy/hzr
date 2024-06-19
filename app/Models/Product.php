@@ -18,4 +18,7 @@ class Product extends Model
     public function productImages ():HasMany {
         return $this->hasMany(ProductImage::class);
     }
+    public function reviews ():HasMany {
+        return $this->hasMany(Review::class);
+    }
 }

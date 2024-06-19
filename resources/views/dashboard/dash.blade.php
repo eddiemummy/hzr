@@ -166,6 +166,15 @@
                     </li>
 
                     <li class="sidebar-item">
+                        <a class="sidebar-link" href="{{ route('dashboard.review') }}" aria-expanded="false">
+                            <div class="d-flex">
+                                <iconify-icon icon="solar:chat-round-unread-outline"></iconify-icon>
+                            </div>
+                            <span class="hide-menu">Yorumlar</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
                         <a class="sidebar-link" href="{{ route('dashboard.edit') }}" aria-expanded="false">
                             <div class="d-flex">
                                 <iconify-icon icon="solar:phone-outline"></iconify-icon>

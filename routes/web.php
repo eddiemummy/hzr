@@ -77,4 +77,5 @@ Route::resource('dashboard/categories', CategoryController::class);
 Route::get('/dashboard/categories/delete/{category}',[CategoryController::class,'delete'])->name('categories.delete');
 Route::get('/dashboard/banner',[DashboardController::class,'banner'])->name('banner');
 Route::put('/dashboard/banner',[DashboardController::class,'updateBanner'])->name('dashboard.banner');
+Route::get('/dashboard/review',[DashboardController::class,'review'])->name('dashboard.review');
 });
