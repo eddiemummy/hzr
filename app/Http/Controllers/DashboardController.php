@@ -98,6 +98,10 @@ class DashboardController extends Controller
             'title' => 'required|string',
             'description' => 'required|string',
             'keywords' => 'required|string',
+            'facebook' => 'nullable|url',
+            'twitter' => 'nullable|url',
+            'instagram' => 'nullable|url',
+            'youtube' => 'nullable|url'
         ]);
          DB::table('site_settings')
            ->where('id', 1)
@@ -105,6 +109,10 @@ class DashboardController extends Controller
                'title' => $request->get('title'),
                'description' => $request->get('description'),
                'keywords' => $request->get('keywords'),
+               'facebook' => $request->get('facebook'),
+               'twitter' => $request->get('twitter'),
+               'instagram' => $request->get('instagram'),
+               'youtube' => $request->get('youtube')
            ]);
         return back()->with('success', 'Your information has been updated');
     }
