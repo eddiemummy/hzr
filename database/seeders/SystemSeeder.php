@@ -21,8 +21,7 @@ class SystemSeeder extends Seeder
             'facebook' => "www.facebook.com",
             'twitter' => "www.twitter.com",
             'instagram' => "www.instagram.com",
-            'youtube' => "www.youtube.com",
-            'tiktok' => "www.tiktok.com"
+            'youtube' => "www.youtube.com"
         ]);
     }
 }

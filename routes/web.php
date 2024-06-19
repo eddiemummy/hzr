@@ -20,6 +20,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::view('/side','posts.side');
+Route::view('/single','posts.single');
+
 
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/iletisim',[HomeController::class,'contact'])->name('contact');
