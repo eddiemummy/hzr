@@ -57,6 +57,50 @@
                                             <label for="keywords">Anahtar Kelimeler</label>
                                         </div>
                                     </div>
+                                    <div class="col-md-12">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" name="facebook" placeholder="Facebook"
+                                                   value="{{ $setting->facebook }}"/>
+                                            @error('facebook')
+                                            <p style="color:red; font-size: small">{{ $message }}</p>
+                                            @enderror
+                                            <label for="keywords">Facebook</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" name="twitter" placeholder="Instagram"
+                                                   value="{{ $setting->instagram }}"/>
+                                            @error('instagram')
+                                            <p style="color:red; font-size: small">{{ $message }}</p>
+                                            @enderror
+                                            <label for="keywords">Instagram</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" name="twitter" placeholder="Twitter"
+                                                   value="{{ $setting->twitter }}"/>
+                                            @error('twitter')
+                                            <p style="color:red; font-size: small">{{ $message }}</p>
+                                            @enderror
+                                            <label for="keywords">Twitter</label>
+                                        </div>
+                                    </div>
+                                     <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" name="youtube" placeholder="Youtube"
+                                                   value="{{ $setting->youtube }}"/>
+                                            @error('youtube')
+                                            <p style="color:red; font-size: small">{{ $message }}</p>
+                                            @enderror
+                                            <label for="keywords">Youtube</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" name="tiktok" placeholder="Tiktok"
+                                                   value="{{ $setting->tiktok }}"/>
+                                            @error('tiktok')
+                                            <p style="color:red; font-size: small">{{ $message }}</p>
+                                            @enderror
+                                            <label for="keywords">TikTok</label>
+                                        </div>
+                                    </div>
                                     <div class="ms-auto mt-3 mt-md-0">
                                                 <button type="submit" class="btn btn-success hstack gap-6">
                                                     <iconify-icon icon="tabler:edit" class="fs-7"></iconify-icon>
