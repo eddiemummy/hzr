@@ -38,7 +38,7 @@
                             @error('hex')
                             <p style="color:red; font-size: small">{{ $message }}</p>
                             @enderror
-                          <label for="color">Hex Kodu</label>
+                          <label for="color">Renk</label>
                         </div>
                       </div>
 

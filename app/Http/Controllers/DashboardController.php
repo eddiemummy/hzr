@@ -149,4 +149,5 @@ class DashboardController extends Controller
         return view('dashboard.review',compact('reviews'));
 
     }
+
 }

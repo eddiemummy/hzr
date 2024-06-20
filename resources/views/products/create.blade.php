@@ -42,7 +42,7 @@
 
                                     <div class="col-md-12">
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" name="name" placeholder="İsim"
+                                            <input type="text" class="form-control" name="name" placeholder="İsim  value="{{ old('name') }}""
                                                    value="{{ old('name') }}"/>
                                             @error('name')
                                             <p style="color:red; font-size: small">{{ $message }}</p>
@@ -53,21 +53,22 @@
                                     <div class="col-md-12">
                                         <div class="form-floating mb-3">
 
-                                            <input type="number" name="old_price" class="form-control" placeholder="Eski Fiyat">
+                                            <input type="number" name="old_price" class="form-control" placeholder="Eski Fiyat" value="{{ old('old_price') }}">
                                             @error('old_price')
                                             <p style="color:red; font-size: small">{{ $message }}</p>
                                             @enderror
-                                            <label for="old_price">Eski Fiyat</label>
+                                            <label for="old_price">Eski Fiyat</labeL>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-floating mb-3">
 
-                                            <input type="number" name="new_price" class="form-control" placeholder="Yeni Fiyat">
+                                            <input type="number" name="new_price" class="form-control" placeholder="Yeni Fiyat"  value="{{ old('new_price') }}">
                                             @error('new_price')
                                             <p style="color:red; font-size: small">{{ $message }}</p>
                                             @enderror
-                                            <label for="new_price">Yeni Fiyat</label>
+                                            <label for="new_price">Yeni Fiyat</labeL>
+
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -77,10 +78,6 @@
                                             @foreach($colors as $color)
                                                 <input type="checkbox" name=colors[]" value="{!! $color->hex !!}"/> {!! $color->name !!}
                                             @endforeach
-
-                                            @error('name')
-                                            <p style="color:red; font-size: small">{{ $message }}</p>
-                                            @enderror
                                         </div>
                                     </div>
 
@@ -96,10 +93,6 @@
                                             <input type="checkbox" name=segment[]" value="highlight"/> Öne Çıkanlar
                                             <input type="checkbox" name=segment[]" value="best_seller"/> En Çok Satanlar
                                             <input type="checkbox" name=segment[]" value="discount"/> İndirimli
-
-                                            @error('name')
-                                            <p style="color:red; font-size: small">{{ $message }}</p>
-                                            @enderror
                                         </div>
                                     </div>
 

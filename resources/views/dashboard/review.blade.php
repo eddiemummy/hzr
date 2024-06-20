@@ -20,6 +20,7 @@
                     <thead>
                       <!-- start row -->
                       <tr>
+                        <th>Ürün</th>
                         <th>Kullanıcı</th>
                         <th>Yorum</th>
                         <th>Email</th>
@@ -31,8 +32,9 @@
                       <!-- start row -->
                       @foreach($reviews as $rev)
                       <tr>
+                        <td>{{ $rev->product->name }}</td>
                         <td>{{ $rev->name }}</td>
-                        <td>{{ Str::words($rev->review,10,'..')}}</td>
+                        <td>{{ Str::words($rev->review,8,'..')}}</td>
                         <td>{{ $rev->email }}</td>
                           <td>
                               <div class="flex-lg-row">

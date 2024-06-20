@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Color;
 use App\Models\Product;
 use App\Models\ProductImage;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -182,5 +183,22 @@ class ProductController extends Controller
                 ]);
         }
        return redirect()->route('products.display', ['product' => $product, 'productImages'=>$product->productImages]);
+    }
+    public function single($slug) {
+        $product = Product::where('slug', $slug)->first();
+        if (!$product) {
+            return view('errors.404');
+        }
+        $reviews = $product->reviews;
+        return view('posts.single', ['product' => $product, 'reviews' => $reviews]);
+    }
+    public function productReview(Request $request) {
+        $validation = $request->validate([
+            'name'=>'string',
+            'email'=>'string',
+            'review'=>'required'
+        ]);
+        Review::create($validation);
+        return back();
     }
 }

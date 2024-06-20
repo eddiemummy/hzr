@@ -33,7 +33,8 @@ Route::view('/dashboard/login','dashboard.login')->name('login');
 Route::post('/dashboard/login',[DashboardController::class,'login'])->name('dashboard.login');
 
 
-
+Route::get('/urun/{slug}',[ProductController::class,'single'])->name('product.single');
+Route::post('/product/review',[ProductController::class,'productReview'])->name('product.review');
 
 Route::middleware('auth')->group(function(){
 Route::resource('dashboard/colors', ColorController::class);
