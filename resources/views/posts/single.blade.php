@@ -92,7 +92,6 @@
 												<ul class="product-comments clearfix">
 													@foreach($reviews as $rev)
                                                     <li class="mb-30">
-														<div class="pro-reviewer-comment">
 															<div class="fix">
 																<div class="floatleft mbl-center">
 																	<h5 class="text-uppercase mb-0"><strong>{!! $rev->name !!}</strong></h5>
@@ -101,7 +100,6 @@
 
 															</div>
 															<p class="mb-0">{!! $rev->review !!}</p>
-														</div>
 													</li>
                                                     @endforeach
 												</ul>
@@ -113,6 +111,7 @@
                                                         @csrf
 														<div class="row">
 															<div class="col-md-6">
+                                                                <input type="hidden" name="product_id" value="{!! $product->id !!}">
 																<input type="text" placeholder="isminiz..." name="name">
 															</div>
 															<div class="col-md-6">
@@ -121,7 +120,7 @@
 														</div>
 														<div class="row">
 															<div class="col-md-12">
-																<textarea class="custom-textarea" name="message" placeholder="yorumunuz..." required></textarea>
+																<textarea class="custom-textarea" name="review" placeholder="yorumunuz..." required></textarea>
 																<button type="submit" data-text="YORUMU GÖNDER" class="button-one submit-button mt-20">YORUMU GÖNDER</button>
 															</div>
 														</div>

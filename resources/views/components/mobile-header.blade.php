@@ -51,7 +51,7 @@
                                     <ul>
                                         <li class="menu-title">KATEGORİLER</li>
                                         @foreach(getCategories() as $category)
-                                        <li><a href="#">{!! $category->name !!}</a></li>
+                                        <li><a href="{!! route('product.category.all', ["slug" => $category->slug]) !!}">{!! $category->name !!}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>

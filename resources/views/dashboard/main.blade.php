@@ -226,7 +226,7 @@
                   <a href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="top" title="social" data-original-title="Youtube"><iconify-icon icon="ph:youtube-logo-bold" class="ps-2 fs-6 text-muted"></iconify-icon></a>
                 </li>
                 <li class="col">
-                  <a href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="top" title="social" data-original-title="Linkd-in"><iconify-icon icon="ph:linkedin-logo-bold" class="ps-2 fs-6 text-muted"></iconify-icon></a>
+                  <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="social" data-original-title="Linkd-in"><iconify-icon icon="ph:linkedin-logo-bold" class="ps-2 fs-6 text-muted"></iconify-icon></a>
                 </li>
               </ul>
             </div>

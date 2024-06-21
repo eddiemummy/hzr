@@ -39,7 +39,7 @@ class CategoryController extends Controller
            'name'=>$request->name,
            'slug'=>Str::slug($request->input('name'),'-')
        ]);
-        return redirect()->intended('dashboard/categories');
+        return redirect()->route('categories.index');
     }
 
     /**

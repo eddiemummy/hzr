@@ -16,7 +16,9 @@
                     <label for="image" class="form-label">Resim</label>
                     <div class="input-group">
                       <input type="file" class="form-control" id="exampleInputname" name="image">
+                        @isset($banner->image)
                         <img src="{{ asset('storage/'. $banner->image) }}" width="200">
+                        @endisset
                     </div>
                   </div>
                   <button class="btn btn-success" type="submit">

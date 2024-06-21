@@ -22,6 +22,24 @@ class ProductController extends Controller
         $products = Product::latest()->paginate(10);
         return view('products.index', ['products' => $products, 'categories' => $categories]);
     }
+    public function categoryAll(Request $request, $slug)
+    {
+        if (!$slug) {
+            // TODO: call 404 page
+        }
+
+        $category = Category::where("slug", $slug)->first();
+
+        if (!$category) {
+            // TODO: call 404 page
+        }
+
+        $product = $category->products;
+
+        return view('posts.side');
+    }
+
+
     /**
      * Show the form for creating a new resource.
      */
@@ -187,17 +205,19 @@ class ProductController extends Controller
     public function single($slug) {
         $product = Product::where('slug', $slug)->first();
         if (!$product) {
-            return view('errors.404');
+            return view('errors.404'); // TODO: move to controller
         }
         $reviews = $product->reviews;
         return view('posts.single', ['product' => $product, 'reviews' => $reviews]);
     }
     public function productReview(Request $request) {
         $validation = $request->validate([
-            'name'=>'string',
-            'email'=>'string',
-            'review'=>'required'
+            'name'=>'string|required',
+            'email'=>'string|required|email',
+            'review'=>'required',
+            'product_id'=>'required',
         ]);
+
         Review::create($validation);
         return back();
     }
