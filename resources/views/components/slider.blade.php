@@ -62,14 +62,16 @@
 												<h2 class="slider-title3 text-uppercase mb-0">{!! $slider->title !!}</h2>
 											</div>
 											<div class="wow fadeInUpBig" data-wow-duration="1.5s" data-wow-delay="0.5s">
-												<h2 class="slider-title1 text-uppercase">furniture</h2>
+												<h2 class="slider-title1 text-uppercase">{!! $slider->highlight !!}</h2>
 											</div>
 											<div class="wow fadeInUpBig" data-wow-duration="2s" data-wow-delay="0.5s">
-												<p class="slider-pro-brief">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+												<p class="slider-pro-brief">{!! $slider->description !!}</p>
 											</div>
+                                            @isset($slider->button)
 											<div class="wow fadeInUpBig" data-wow-duration="2.5s" data-wow-delay="0.5s">
-												<a href="#" class="button-one style-2 text-uppercase mt-20" data-text="Shop now">Shop now</a>
+												<a href="{!! $slider->link !!}" class="button-one style-2 text-uppercase mt-20" data-text="Shop now">{!! $slider->button !!}</a>
 											</div>
+                                            @endisset
 										</div>
 									</div>
 								</div>
