@@ -21,14 +21,13 @@
 
 			<!-- End Slider-section -->
 			<!-- sidebar-search Start -->
-			<x-search/>
 			<!-- sidebar-search End -->
 			<!-- PRODUCT-AREA START -->
-			<x-product/>
+			<x-product :newProducts="$newProducts"/>
 			<!-- PRODUCT-AREA END -->
 
 			<!-- PURCHASE-ONLINE-AREA START -->
-			<x-purchase/>
+			<x-purchase :segments="$segments"/>
 			<!-- PURCHASE-ONLINE-AREA END -->
 			<!-- BLGO-AREA START -->
 

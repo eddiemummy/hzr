@@ -42,7 +42,7 @@
 				<div class="main-menu  d-none d-md-block">
 					<nav>
 						<ul>
-							<li><a href="{{ route('home') }}">Ana Sayfa</a>
+							<li><a href="{{ route('home') }}">ANA SAYFA</a>
 
 							</li>
                             <li><a href="{{ route('product.all') }}">ÜRÜNLERİMİZ</a></li>
@@ -56,8 +56,8 @@
                                     </ul>
                                 </div>
                             </li>
-							<li><a href="{{ route('about') }}">Hakkımızda</a></li>
-							<li><a href="{{ route('contact') }}">İletişim</a></li>
+							<li><a href="{{ route('about') }}">HAKKIMIZDA</a></li>
+							<li><a href="{{ route('contact') }}">İLETİŞİM</a></li>
 						</ul>
 					</nav>
 				</div>

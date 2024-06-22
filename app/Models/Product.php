@@ -10,15 +10,34 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Product extends Model
 {
     use HasFactory;
+
     protected $guarded = [];
 
-    public function category():BelongsTo {
+    // highlight,best_seller
+    const SEGMENT_MAPS = array(
+        'Öne çıkanlar' => 'pro-label new-label',
+        'Çok satanlar' => 'pro-label best-label'
+    );
+
+    public function category(): BelongsTo
+    {
         return $this->belongsTo(Category::class);
     }
-    public function productImages ():HasMany {
+
+    public function productImages(): HasMany
+    {
         return $this->hasMany(ProductImage::class);
     }
-    public function reviews ():HasMany {
+
+    public function reviews(): HasMany
+    {
         return $this->hasMany(Review::class);
+    }
+
+    public function getLabels()
+    {
+        foreach (explode(',', $this->segment) as $segment) {
+            return '<span class="'.self::SEGMENT_MAPS[$segment].'">'.$segment.'</span>';
+        }
     }
 }

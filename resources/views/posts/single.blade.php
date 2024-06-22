@@ -89,9 +89,7 @@
 										<div class="pro-tab-info pro-reviews">
 											<div class="customer-review mb-60">
 												<h3 class="tab-title title-border mb-30">KULLANICI YORUMLARI</h3>
-												<ul class="product-comments clearfix">
 													@foreach($reviews as $rev)
-                                                    <li class="mb-30">
 															<div class="fix">
 																<div class="floatleft mbl-center">
 																	<h5 class="text-uppercase mb-0"><strong>{!! $rev->name !!}</strong></h5>
@@ -100,9 +98,8 @@
 
 															</div>
 															<p class="mb-0">{!! $rev->review !!}</p>
-													</li>
+                                                    <br>
                                                     @endforeach
-												</ul>
 											</div>
 											<div class="leave-review">
 												<h3 class="tab-title title-border mb-30">YORUM BIRAK</h3>

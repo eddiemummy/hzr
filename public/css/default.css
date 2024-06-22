@@ -1,5 +1,5 @@
 /* =======================================
-	All common CSS of Hurst Theme 
+	All common CSS of Hurst Theme
 ======================================== */
 
 
@@ -87,6 +87,9 @@
 .pro-label.sale-label {
   background: #c87065 none repeat scroll 0 0;
 }
+.pro-label.best-label {
+    background: #4b99d2 none repeat scroll 0 0;
+}
 .single-banner .pro-label {
   left: 30px;
 }
@@ -99,7 +102,7 @@
 ----------------------------------------------------- */
 .btn {
   border-radius: 0;
-}	
+}
 .button-one {
   background: #efefef none repeat scroll 0 0;
   display: inline-block;
@@ -108,7 +111,7 @@
   overflow: hidden;
   padding: 0 15px;
   position: relative;
-}	
+}
 .button-one::before {
   background: #c8a165 none repeat scroll 0 0;
   bottom: 0;
@@ -134,11 +137,11 @@
 }
 .button-one:hover, .button-one:focus, .button-one:active {
   color: #fff;
-}	
+}
 .button-one:hover::before, .button-one:focus::before, .button-one:active::before {
   left: 0;
   visibility: visible;
-}	
+}
 .submit-button.btn-bg-2 {
   background: #C8A165 none repeat scroll 0 0;
 }
@@ -280,7 +283,7 @@ button {
   height: 100px;
   padding: 15px 20px;
   width: 100%;
-  outline: none;  
+  outline: none;
 }
 /* -----------------------------------------------------
 	Slick slider Next - Prev
@@ -369,7 +372,7 @@ button {
 }
 /* ************************
 		 Margin top
-************************ */ 
+************************ */
 .mt-0 {	margin-top: 0; }
 .mt-10 { margin-top: 10px; }
 .mt-15 { margin-top: 15px; }
@@ -390,7 +393,7 @@ button {
 
  /* ************************
 	  Margin right
-************************ */ 
+************************ */
 .mr-0 { margin-right: 0; }
 .mr-10 { margin-right: 10px; }
 .mr-15 { margin-right: 15px; }
@@ -450,7 +453,7 @@ button {
 .ml-130 { margin-left: 130px; }
 .ml-140 { margin-left: 140px; }
 .ml-150 { margin-left: 150px; }
- 
+
  /* ************************
 		Padding top
 ************************ */
@@ -490,8 +493,8 @@ button {
 .pr-110 { padding-right: 110px; }
 .pr-120 { padding-right: 120px; }
 .pr-130 { padding-right: 130px; }
-.pr-140 { padding-right: 140px; }  
- 
+.pr-140 { padding-right: 140px; }
+
  /* ************************
 		Padding bottom
 ************************ */
@@ -511,8 +514,8 @@ button {
 .pb-120 { padding-bottom: 120px; }
 .pb-130 { padding-bottom: 130px; }
 .pb-140 { padding-bottom: 140px; }
-.pb-150 { padding-bottom: 150px; }  
- 
+.pb-150 { padding-bottom: 150px; }
+
  /* ************************
 		Padding left
 ************************ */
@@ -532,7 +535,7 @@ button {
 .pl-120 { padding-left: 120px; }
 .pl-130 { padding-left: 130px; }
 .pl-140 { padding-left: 140px; }
-.pl-150 { padding-left: 150px; }  
+.pl-150 { padding-left: 150px; }
 
 
 /* -----------------------------------------------------
@@ -583,7 +586,7 @@ button {
     display: block; }
 .hamburger-inner::before {top: -6px; }
 .hamburger-inner::after { bottom: -10px; }
-	
+
 
 /*
  * Emphatic
@@ -918,4 +921,3 @@ h3.widget-title-modal {
 
 
 
-	  

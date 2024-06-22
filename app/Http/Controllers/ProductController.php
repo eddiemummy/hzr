@@ -22,20 +22,87 @@ class ProductController extends Controller
         $products = Product::latest()->paginate(10);
         return view('products.index', ['products' => $products, 'categories' => $categories]);
     }
-    public function categoryAll(Request $request, $slug)   {
 
-
+    public function categoryAll(Request $request, $slug)
+    {
         $category = Category::where("slug", $slug)->first();
-        $products = $category->products;
+        $products = Product::where("category_id", $category->id);
+
+        if ($search = $request->get("s")) {
+            $products = $products->where("name", "like", "%" . $search . "%");
+        }
+
+        $ct = 0;
+        if ($price = $request->get("p")) {
+            $price = str_replace("₺", "", $price);
+            $price = str_replace(" ", "", $price);
+            $price = explode("-", $price);
+
+            $products = $products->whereBetween("new_price", $price);
+            $ct = $products->count();
+        }
+
+        $count = 0;
+        $selectedColors = [];
+        if ($color = $request->get("c")) {
+            $selectedColors = $color;
+            foreach($color as $item) {
+                if($count == 0){
+                    $products = $products->where("colors", "like", "%" . $item . "%");
+                }elseif($ct != 0) {
+                    $products = $products->orWhere("colors", "like", "%" . $item . "%");
+                }
+                $count++;
+            }
+        }
+
+        $products = $products->paginate(10);
+
         $is_cat = true;
 
-        return view('posts.side',compact('products','is_cat'));
+        $colors = Color::all();
+
+        return view('posts.side', compact('products', 'is_cat', 'colors', 'selectedColors'));
     }
 
-    public function productAll() {
-        $products = Product::all();
+    public function productAll(Request $request)
+    {
+        $products = Product::where('id', '>', 0);
         $is_cat = false;
-        return view('posts.side',compact('products','is_cat'));
+
+        if ($search = $request->get("s")) {
+            $products = $products->where("name", "like", "%" . $search . "%");
+        }
+
+        $ct = 0;
+        if ($price = $request->get("p")) {
+            $price = str_replace("₺", "", $price);
+            $price = str_replace(" ", "", $price);
+            $price = explode("-", $price);
+
+            $products = $products->whereBetween("new_price", $price);
+            $ct = $products->count();
+        }
+
+        $count = 0;
+        $selectedColors = [];
+        if ($color = $request->get("c")) {
+            $selectedColors = $color;
+            foreach($color as $item) {
+                if($count == 0){
+                    $products = $products->where("colors", "like", "%" . $item . "%");
+                }elseif($ct != 0) {
+                    $products = $products->orWhere("colors", "like", "%" . $item . "%");
+                }
+                $count++;
+            }
+        }
+
+        $products = $products->paginate(10);
+
+        $colors = Color::all();
+
+        return view('posts.side', compact('products', 'is_cat', 'colors', 'selectedColors'));
     }
 
     /**
@@ -45,7 +112,7 @@ class ProductController extends Controller
     {
         $categories = Category::all();
         $colors = Color::all();
-        return view('products.create',['categories' => $categories, 'colors' => $colors]);
+        return view('products.create', ['categories' => $categories, 'colors' => $colors]);
     }
 
     /**
@@ -54,7 +121,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-           'category_id' => 'required',
+            'category_id' => 'required',
             'name' => 'string|required',
             'description' => 'required',
             'old_price' => 'numeric|nullable',
@@ -63,33 +130,33 @@ class ProductController extends Controller
         ]);
 
         $path = null;
-        if($request->hasFile('image')) {
+        if ($request->hasFile('image')) {
             $path = Storage::disk('public')->put('product_images', $request->file('image'));
         }
 
         $product = Product::create([
-           'category_id' => $request->get('category_id'),
+            'category_id' => $request->get('category_id'),
             'name' => $request->get('name'),
-            'description'=> $request->get('description'),
-            'slug' => Str::slug($request->get('name'),'-'),
+            'description' => $request->get('description'),
+            'slug' => Str::slug($request->get('name'), '-'),
             'old_price' => $request->get('old_price'),
             'new_price' => $request->get('new_price'),
             'default_image' => $path,
             'colors' => implode(",", $request->get('colors')),
             'segment' => implode(",", $request->get('segment'))
-       ]);
+        ]);
 
 
         foreach ($request->file('other') as $image) {
             // diğer görselleri burada yakalıyoruz ve tek tek alıyoruz.
             // önce diske yazılacak sonrasında ise yüklenen görselin pathi alınıp.
             // product_images db sine yaz
-                $path = Storage::disk('public')->put('product_images', $image);
+            $path = Storage::disk('public')->put('product_images', $image);
 
-                ProductImage::create([
-                   'product_id' => $product->id,
-                   'image' => $path
-                ]);
+            ProductImage::create([
+                'product_id' => $product->id,
+                'image' => $path
+            ]);
         }
         $cat = $product->category;
         $cat->count += 1;
@@ -120,8 +187,8 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-         $request->validate([
-           'category_id' => 'required',
+        $request->validate([
+            'category_id' => 'required',
             'name' => 'string|required',
             'description' => 'required',
             'old_price' => 'numeric|nullable',
@@ -131,6 +198,7 @@ class ProductController extends Controller
         $product->update([
             'category_id' => $request->category_id,
             'name' => $request->name,
+            'slug' => Str::slug($request->get('name'), '-'),
             'description' => $request->description,
             'old_price' => $request->old_price,
             'new_price' => $request->new_price,
@@ -138,7 +206,7 @@ class ProductController extends Controller
             'segment' => implode(",", $request->get('segment'))
 
         ]);
-         return redirect()->route('products.index');
+        return redirect()->route('products.index');
     }
 
     /**
@@ -148,34 +216,41 @@ class ProductController extends Controller
     {
 
         Storage::disk('public')->delete($product->default_image);
-        foreach($product->productImages as $images) {
+        foreach ($product->productImages as $images) {
             Storage::disk('public')->delete($images->image);
         }
 
         $product->delete();
         return redirect()->route('products.index');
     }
-    public function display(Product $product) {
-        $productImages = $product-> productImages;
+
+    public function display(Product $product)
+    {
+        $productImages = $product->productImages;
         return view('products.display', ['product' => $product, 'productImages' => $productImages]);
     }
 
-    public function delPic($id) {
+    public function delPic($id)
+    {
         $image = ProductImage::find($id);
         Storage::disk('public')->delete($image->image);
         $image->delete();
         return back();
     }
-    public function changePic(Product $product) {
-        return view('products.change',['product'=>$product]);
+
+    public function changePic(Product $product)
+    {
+        return view('products.change', ['product' => $product]);
     }
-     public function updatePic(Request $request, Product $product) {
+
+    public function updatePic(Request $request, Product $product)
+    {
         $request->validate([
             'image' => 'image|mimes:jpeg,pngphpjpg,gif,svg,webp|max:2048',
         ]);
         $path = $product->default_image ?? null;
-        if($request->hasFile('image')) {
-            if($product->default_image) {
+        if ($request->hasFile('image')) {
+            if ($product->default_image) {
                 Storage::disk('public')->delete($product->default_image);
             }
             $path = Storage::disk('public')->put('product_images', $request->file('image'));
@@ -184,23 +259,28 @@ class ProductController extends Controller
         $product->save();
         return redirect()->route('products.display', ['product' => $product]);
     }
-    public function addImage(Product $product) {
-            return view('products.add', ['product' => $product]);
+
+    public function addImage(Product $product)
+    {
+        return view('products.add', ['product' => $product]);
     }
 
-    public function storeImage(Request $request, Product $product) {
+    public function storeImage(Request $request, Product $product)
+    {
         $id = $product->id;
-       foreach ($request->file('other') as $image) {
-                $path = Storage::disk('public')->put('product_images', $image);
+        foreach ($request->file('other') as $image) {
+            $path = Storage::disk('public')->put('product_images', $image);
 
-                ProductImage::create([
-                   'product_id'=>$id,
-                   'image' => $path
-                ]);
+            ProductImage::create([
+                'product_id' => $id,
+                'image' => $path
+            ]);
         }
-       return redirect()->route('products.display', ['product' => $product, 'productImages'=>$product->productImages]);
+        return redirect()->route('products.display', ['product' => $product, 'productImages' => $product->productImages]);
     }
-    public function single($slug) {
+
+    public function single($slug)
+    {
         $product = Product::where('slug', $slug)->first();
         $product->hit += 1;
         $product->update();
@@ -208,12 +288,14 @@ class ProductController extends Controller
         $reviews = $product->reviews;
         return view('posts.single', ['product' => $product, 'reviews' => $reviews]);
     }
-    public function productReview(Request $request) {
+
+    public function productReview(Request $request)
+    {
         $validation = $request->validate([
-            'name'=>'string|required',
-            'email'=>'string|required|email',
-            'review'=>'required',
-            'product_id'=>'required',
+            'name' => 'string|required',
+            'email' => 'string|required|email',
+            'review' => 'required',
+            'product_id' => 'required',
         ]);
 
         Review::create($validation);

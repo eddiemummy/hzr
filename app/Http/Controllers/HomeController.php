@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\Contact;
 use App\Models\NewsLetter;
 use App\Models\Product;
+use App\Models\ProductSegment;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 
@@ -13,8 +14,19 @@ class HomeController extends Controller
 {
     public function index() {
         $sliders = Slider::all();
-        $products = Product::latest()->get();
-        return view('posts.index', compact('sliders','products'));
+        $products = Product::latest();
+
+        $newProducts = $products->limit(10)->get();
+        $products = $products->get();
+
+        $segments = [];
+
+        foreach (ProductSegment::all() as $item) {
+            $productList = Product::whereIn("id", explode(",", $item->products))->get();
+            $segments[$item->segment] = $productList;
+        }
+
+        return view('posts.index', compact('sliders', 'products', 'newProducts', 'segments'));
 
     }
    public function contact() {
