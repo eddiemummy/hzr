@@ -45,7 +45,7 @@
 							<li><a href="{{ route('home') }}">Ana Sayfa</a>
 
 							</li>
-                            <li><a href="{{ route('about') }}">ÜRÜNLERİMİZ</a></li>
+                            <li><a href="{{ route('product.all') }}">ÜRÜNLERİMİZ</a></li>
                             <li><a href="#">KATEGORİLER</a>
                                 <div class="sub-menu menu-scroll">
                                     <ul>

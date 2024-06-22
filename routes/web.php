@@ -24,9 +24,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/iletisim', [HomeController::class, 'contact'])->name('contact');
 Route::get('/hakkimizda', [HomeController::class, 'aboutStore'])->name('about');
-Route::get('/urunlerimiz', [ProductController::class, 'categoryAll'])->name('product.all');
+Route::get('/urunlerimiz', [ProductController::class, 'productAll'])->name('product.all');
 Route::get('/kategori/{slug}', [ProductController::class, 'categoryAll'])->name('product.category.all');
 Route::get('/urun/{slug}', [ProductController::class, 'single'])->name('product.single');
+
 
 Route::post('/news', [HomeController::class, 'store'])->name('news.store');
 

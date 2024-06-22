@@ -22,23 +22,21 @@ class ProductController extends Controller
         $products = Product::latest()->paginate(10);
         return view('products.index', ['products' => $products, 'categories' => $categories]);
     }
-    public function categoryAll(Request $request, $slug)
-    {
-        if (!$slug) {
-            // TODO: call 404 page
-        }
+    public function categoryAll(Request $request, $slug)   {
+
 
         $category = Category::where("slug", $slug)->first();
+        $products = $category->products;
+        $is_cat = true;
 
-        if (!$category) {
-            // TODO: call 404 page
-        }
-
-        $product = $category->products;
-
-        return view('posts.side');
+        return view('posts.side',compact('products','is_cat'));
     }
 
+    public function productAll() {
+        $products = Product::all();
+        $is_cat = false;
+        return view('posts.side',compact('products','is_cat'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -96,7 +94,7 @@ class ProductController extends Controller
         $cat = $product->category;
         $cat->count += 1;
         $cat->save();
-        return redirect()->intended('/dashboard/products');
+        return redirect()->route('products.index');
     }
 
     /**
@@ -204,9 +202,9 @@ class ProductController extends Controller
     }
     public function single($slug) {
         $product = Product::where('slug', $slug)->first();
-        if (!$product) {
-            return view('errors.404'); // TODO: move to controller
-        }
+        $product->hit += 1;
+        $product->update();
+
         $reviews = $product->reviews;
         return view('posts.single', ['product' => $product, 'reviews' => $reviews]);
     }

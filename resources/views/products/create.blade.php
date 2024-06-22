@@ -90,9 +90,9 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="category_id">Nerelerde Gözüksün?</label>
-                                            <input type="checkbox" name=segment[]" value="highlight"/> Öne Çıkanlar
-                                            <input type="checkbox" name=segment[]" value="best_seller"/> En Çok Satanlar
-                                            <input type="checkbox" name=segment[]" value="discount"/> İndirimli
+                                            <input type="checkbox" name=segment[]" value="Öne çıkanlar"/> Öne Çıkanlar
+                                            <input type="checkbox" name=segment[]" value="Çok satanlar"/> En Çok Satanlar
+                                            <input type="checkbox" name=segment[]" value="İndirimli"/> İndirimli
                                         </div>
                                     </div>
 
