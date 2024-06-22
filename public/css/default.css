@@ -264,6 +264,7 @@ button {
   line-height: 35px;
   padding: 0 30px;
   text-transform: uppercase;
+  margin-left: 5px !important;
 }
 .submit-button.button-one::after {
   border-color: transparent;

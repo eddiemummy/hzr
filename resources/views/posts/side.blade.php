@@ -32,7 +32,7 @@
                     <!-- Widget-categories end -->
                     <!-- Shop-Filter start -->
                     <form action="{!! request()->url() !!}" method="GET">
-                        <aside class="widget shop-filter mb-30">
+                        <aside class="widget shop-filter">
                             <div class="widget-title">
                                 <h4>FİYAT</h4>
                             </div>
@@ -42,13 +42,13 @@
                                         <input type="submit" value="Fiyat aralığı :">
                                         <input type="text" id="amount" name="p">
                                     </div>
-                                    <div id="slider-range"></div>
+                                    <div id="slider-range" data-min="{!! $filterMin !!}" data-max="{!! $filterMax !!}"></div>
                                 </div>
                             </div>
                         </aside>
                         <!-- Shop-Filter end -->
                         <!-- Widget-Color start -->
-                        <aside class="widget widget-color mb-30">
+                        <aside class="widget widget-color">
                             <div class="widget-title">
                                 <h4>RENK</h4>
                             </div>

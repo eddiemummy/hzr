@@ -26,7 +26,7 @@
 						<div class="row">
 							<div class="col-md-4 offset-md-4 col-7">
 								<div class="logo text-md-center">
-									<a href="index.html"><img src="img/logo/logo.png" alt=""></a>
+									<a href="/"><img src="{!! asset('img/logo/logo.png') !!}" alt=""></a>
 								</div>
 							</div>
 

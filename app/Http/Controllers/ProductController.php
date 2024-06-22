@@ -28,6 +28,9 @@ class ProductController extends Controller
         $category = Category::where("slug", $slug)->first();
         $products = Product::where("category_id", $category->id);
 
+        $filterMin = 0;
+        $filterMax = 50000;
+
         if ($search = $request->get("s")) {
             $products = $products->where("name", "like", "%" . $search . "%");
         }
@@ -40,6 +43,8 @@ class ProductController extends Controller
 
             $products = $products->whereBetween("new_price", $price);
             $ct = $products->count();
+            $filterMin = $price[0];
+            $filterMax = $price[1];
         }
 
         $count = 0;
@@ -62,14 +67,16 @@ class ProductController extends Controller
 
         $colors = Color::all();
 
-        return view('posts.side', compact('products', 'is_cat', 'colors', 'selectedColors'));
+        return view('posts.side', compact('products', 'is_cat', 'colors', 'selectedColors',
+        'filterMin', 'filterMax'));
     }
 
     public function productAll(Request $request)
     {
         $products = Product::where('id', '>', 0);
         $is_cat = false;
-
+        $filterMin = 0;
+        $filterMax = 50000;
         if ($search = $request->get("s")) {
             $products = $products->where("name", "like", "%" . $search . "%");
         }
@@ -82,6 +89,8 @@ class ProductController extends Controller
 
             $products = $products->whereBetween("new_price", $price);
             $ct = $products->count();
+            $filterMin = $price[0];
+            $filterMax = $price[1];
         }
 
         $count = 0;
@@ -102,7 +111,8 @@ class ProductController extends Controller
 
         $colors = Color::all();
 
-        return view('posts.side', compact('products', 'is_cat', 'colors', 'selectedColors'));
+        return view('posts.side', compact('products', 'is_cat', 'colors', 'selectedColors',
+            'filterMin', 'filterMax'));
     }
 
     /**
