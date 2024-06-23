@@ -35,7 +35,7 @@ class SliderController extends Controller
         $request->validate([
            'title' => 'required',
             'body' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             'highlight' => 'required',
             'button' => 'nullable|string',
             'link' => 'nullable|string',
@@ -80,7 +80,7 @@ class SliderController extends Controller
         $request->validate([
            'title' => 'required',
             'body' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             'highlight' => 'required',
             'button' => 'nullable',
             'link' => 'nullable',
@@ -100,7 +100,7 @@ class SliderController extends Controller
             'button' => $request->button,
             'link' => $request->link,
         ]);
-        return redirect()->intended('dashboard/sliders')->with('success', 'Slider updated successfully.');
+        return redirect()->route('sliders.index')->with('success', 'Slider updated successfully.');
     }
 
     /**

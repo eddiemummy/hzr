@@ -57,7 +57,15 @@
 									</div>
 									<!-- color end -->
 									<!-- Size start -->
+                                    <div class="clearfix display-flex">
+                                        <div class="wp-buy-btn">
+                                            <a target="_blank" href="https://api.whatsapp.com/send?phone=905344184973&text={!! $product->name." ürününüz hakkında bilgi almak istiyorum." !!}"><i class="zmdi zmdi-whatsapp size-20"></i> Satın Al</a>
+                                        </div>
 
+                                        <div class="phone-buy-btn">
+                                            <a target="_blank" href=""><i class="zmdi zmdi-phone-in-talk size-20"></i> Satın Al</a>
+                                        </div>
+                                    </div>
 									<!-- Size end -->
 
 									<!-- Single-pro-slider Small-photo start -->
