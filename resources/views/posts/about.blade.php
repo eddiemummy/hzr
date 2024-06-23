@@ -18,7 +18,7 @@
 						<div class="row">
 							<div class="col-lg-6">
 								<div class="about-photo mb-4">
-									<img src="{{ asset('storage/'. $about->image) }}" alt="">
+									<img src="{{ asset('storage/'. $about->image) }}" alt="Huzur Design">
 								</div>
 							</div>
 							<div class="col-lg-6">

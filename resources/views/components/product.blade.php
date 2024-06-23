@@ -14,7 +14,7 @@
 										<span class="pro-label new-label">Yeni</span>
                                         <a href="{{ route('product.single',['slug'=>$newProduct->slug]) }}"><img
                                                 src="{{ asset('storage/'.$newProduct->default_image) }}"
-                                                alt=""></a>
+                                                alt="{!! $newProduct->title !!}"></a>
 									</div>
 									<div class="product-info clearfix">
 										<div class="fix">

@@ -116,7 +116,7 @@
                                                     {!! $product->getLabels(); !!}
                                                     <a href="{{ route('product.single',['slug'=>$product->slug]) }}"><img
                                                             src="{{ asset('storage/'.$product->default_image) }}"
-                                                            alt=""></a>
+                                                            alt="{!! $product->name !!}"></a>
                                                 </div>
                                                 <div class="product-info clearfix text-center">
                                                     <div class="fix">
@@ -151,7 +151,7 @@
                                                     <span class="pro-price-2">&#8378; {!! $product->new_price !!}</span>
                                                     <a href="{{ route('product.single',['slug'=>$product->slug]) }}"><img
                                                             src="{{ asset('storage/'.$product->default_image) }}"
-                                                            alt=""></a>
+                                                            alt="{!! $product->name !!}"></a>
                                                 </div>
                                                 <div class="product-info">
                                                     <div class="fix">

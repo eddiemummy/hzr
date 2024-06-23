@@ -18,7 +18,7 @@
                         <!-- Single-pro-slider Big-photo start -->
                         <div class="single-pro-slider single-big-photo view-lightbox slider-for">
                             <div>
-                                <img src="{{ asset('storage/'.$product->default_image) }}" alt="">
+                                <img src="{{ asset('storage/'.$product->default_image) }}" alt="{!! $product->name !!}">
                                 <a class="view-full-screen" href="{{ asset('storage/'.$product->default_image) }}"
                                    data-lightbox="roadtrip" data-title="My caption">
                                     <i class="zmdi zmdi-zoom-in"></i>
@@ -26,7 +26,7 @@
                             </div>
                             @foreach($product->productImages as $img)
                                 <div>
-                                    <img src="{{ asset('storage/'.$img->image) }}" alt="">
+                                    <img src="{{ asset('storage/'.$img->image) }}" alt="{!! $product->name !!}">
                                     <a class="view-full-screen" href="{{ asset('storage/'.$img->image) }}"
                                        data-lightbox="roadtrip" data-title="My caption">
                                         <i class="zmdi zmdi-zoom-in"></i>
@@ -87,11 +87,11 @@
                             <!-- Single-pro-slider Small-photo start -->
                             <div class="single-pro-slider single-sml-photo slider-nav">
                                 <div>
-                                    <img src="{{ asset('storage/'.$product->default_image) }}" alt="">
+                                    <img src="{{ asset('storage/'.$product->default_image) }}" alt="{!! $product->name !!}">
                                 </div>
                                 @foreach($product->productImages as $img)
                                     <div>
-                                        <img src="{{ asset('storage/'.$img->image) }}" alt="">
+                                        <img src="{{ asset('storage/'.$img->image) }}" alt="{!! $product->name !!}">
                                     </div>
                                 @endforeach
                             </div>
