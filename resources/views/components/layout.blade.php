@@ -1,6 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="en">
-	<x-head/>
+    {{ $heading }}
 	<body>
 		<!-- WRAPPER START -->
 		<div class="wrapper">

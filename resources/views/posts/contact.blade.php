@@ -1,4 +1,12 @@
+@php $contact = getContact(); @endphp
 <x-layout>
+     <x-slot name="heading">
+        <x-head>
+        <x-slot:title>
+            {!! 'İletişim' !!}
+        </x-slot:title>
+       </x-head>
+    </x-slot>
     <div class="contact-us-area  pt-80 pb-80">
 				<div class="container">
 					<div class="contact-us customer-login bg-white">

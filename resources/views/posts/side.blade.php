@@ -1,4 +1,11 @@
 <x-layout>
+    <x-slot name="heading">
+        <x-head>
+        <x-slot:title>
+            {{ $is_cat ? 'Kategoriler' : 'Ürünler'  }}
+        </x-slot:title>
+       </x-head>
+    </x-slot>
     <div class="product-area pt-80 pb-80 product-style-2">
         <div class="container">
             <div class="row">

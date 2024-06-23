@@ -1,6 +1,21 @@
 <!doctype html>
 <html class="no-js" lang="en">
-	<x-head/>
+    @php $setting = getSiteSetting(); @endphp
+    <x-head>
+        <x-slot:title>
+            {!! $setting->title !!}
+        </x-slot:title>
+        <x-slot:meta_keywords>
+            {!! $setting->keywords !!}
+        </x-slot:meta_keywords>
+        <x-slot:description>
+            {!! $setting->description !!}
+        </x-slot:description>
+    </x-head>
+{{--	@extends('components.head')--}}
+{{--    @section('title',$setting->title)--}}
+{{--    @section('keywords',$setting->keywords)--}}
+{{--    @section('description',$setting->description)--}}
 	<body>
 		<!-- WRAPPER START -->
 		<div class="wrapper">
