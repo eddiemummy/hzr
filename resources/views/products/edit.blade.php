@@ -96,9 +96,9 @@
                                         <div class="mb-3">
                                             <label for="category_id">Nerelerde Gözüksün?</label>
                                             @php $segments = explode(",", $product->segment) @endphp
-                                            <input type="checkbox" name=segment[]" @if(in_array("highlight", $segments)) checked @endif value="highlight"/> Öne Çıkanlar
-                                            <input type="checkbox" name=segment[]" @if(in_array("best_seller", $segments)) checked @endif value="best_seller"/> En Çok Satanlar
-                                            <input type="checkbox" name=segment[]" @if(in_array("discount", $segments)) checked @endif value="discount"/> İndirimli
+                                            <input type="checkbox" name=segment[]" @if(in_array("Öne çıkanlar", $segments)) checked @endif value="Öne çıkanlar"/> Öne Çıkanlar
+                                            <input type="checkbox" name=segment[]" @if(in_array("Çok satanlar", $segments)) checked @endif value="Çok satanlar"/> En Çok Satanlar
+                                            <input type="checkbox" name=segment[]" @if(in_array("İndirimli", $segments)) checked @endif value="İndirimli"/> İndirimli
 
                                             @error('name')
                                             <p style="color:red; font-size: small">{{ $message }}</p>

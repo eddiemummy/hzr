@@ -106,10 +106,8 @@
                                         </div>
                                         <div class="fix">
                                             @isset($newProduct->old_price)
-                                                @if($newProduct->old_price - $newProduct->new_price > 0)
                                                     <span class="pro-price floatleft"
                                                           style='color:black;text-decoration:line-through;color:darkcyan; margin-right: 10px;'> &#8378; {{ $newProduct->old_price }}</span>
-                                                @endif
                                             @endisset
                                             <span class="pro-price floatleft">{!! $newProduct->new_price !!} ₺</span>
                                         </div>

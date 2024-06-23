@@ -99,6 +99,9 @@
                             <div class="tab-pane active" id="grid-view">
                                 <div class="row">
                                     <!-- Single-product start -->
+                                    @if(count($products) == 0)
+                                        Üzgünüz, aradığınız kriterlere uygun ürün bulunamadı.
+                                    @endif
                                     @foreach($products as $product)
                                         <div class="col-lg-4 col-md-6">
                                             <div class="single-product">
@@ -114,7 +117,13 @@
                                                                 href="{{ route('product.single',['slug'=>$product->slug]) }}">{!! $product->name !!}</a>
                                                         </h4>
                                                     </div>
-
+                                                    <div class="fix">
+                                                        @isset($product->old_price)
+                                                            <span class="pro-price"
+                                                                  style='color:black;text-decoration:line-through;color:darkcyan; margin-right: 10px;'> &#8378; {{ $product->old_price }}</span>
+                                                        @endisset
+                                                        <span class="pro-price">{!! $product->new_price !!} ₺</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

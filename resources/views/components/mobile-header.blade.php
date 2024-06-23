@@ -1,4 +1,4 @@
-    <header id="sticky-menu" class="header">
+<header id="sticky-menu" class="header">
     <div class="header-area">
         <div class="container-fluid">
             <div class="row">
@@ -53,16 +53,13 @@
                             </li>
                             <li><a href="{{ route('product.all') }}">ÜRÜNLERİMİZ</a></li>
                             <li><a href="#">KATEGORİLER</a>
-                                <div class="sub-menu menu-scroll">
-                                    <ul>
-                                        <li class="menu-title">KATEGORİLER</li>
-                                        @foreach(getCategories() as $category)
-                                            <li>
-                                                <a href="{!! route('product.category.all', ["slug" => $category->slug]) !!}">{!! $category->name !!}</a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </div>
+                                <ul>
+                                    @foreach(getCategories() as $category)
+                                        <li>
+                                            <a href="{!! route('product.category.all', ["slug" => $category->slug]) !!}">{!! $category->name !!}</a>
+                                        </li>
+                                    @endforeach
+                                </ul>
                             </li>
                             <li><a href="{{ route('about') }}">HAKKIMIZDA</a></li>
                             <li><a href="{{ route('contact') }}">İLETİŞİM</a></li>
