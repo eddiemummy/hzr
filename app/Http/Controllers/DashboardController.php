@@ -99,7 +99,7 @@ class DashboardController extends Controller
     public function updateSystem(Request $request) {
         $request->validate([
             'title' => 'required|string',
-            'description' => 'required|string',
+            'description' => 'required|string|max:155',
             'keywords' => 'required|string',
             'facebook' => 'nullable|url',
             'twitter' => 'nullable|url',

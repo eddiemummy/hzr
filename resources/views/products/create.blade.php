@@ -43,7 +43,7 @@
                                     <div class="col-md-12">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" name="name" placeholder="İsim  value="{{ old('name') }}""
-                                                   value="{{ old('name') }}"/>
+                                                   value="{{ old('name') }}" required/>
                                             @error('name')
                                             <p style="color:red; font-size: small">{{ $message }}</p>
                                             @enderror
@@ -54,16 +54,13 @@
                                         <div class="form-floating mb-3">
 
                                             <input type="number" name="old_price" class="form-control" placeholder="Eski Fiyat" value="{{ old('old_price') }}">
-                                            @error('old_price')
-                                            <p style="color:red; font-size: small">{{ $message }}</p>
-                                            @enderror
                                             <label for="old_price">Eski Fiyat</labeL>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-floating mb-3">
 
-                                            <input type="number" name="new_price" class="form-control" placeholder="Yeni Fiyat"  value="{{ old('new_price') }}">
+                                            <input type="number" name="new_price" class="form-control" placeholder="Yeni Fiyat"  value="{{ old('new_price') }}" required>
                                             @error('new_price')
                                             <p style="color:red; font-size: small">{{ $message }}</p>
                                             @enderror
@@ -76,14 +73,15 @@
                                             <label for="category_id">Renkler</label>
 
                                             @foreach($colors as $color)
-                                                <input type="checkbox" name=colors[]" value="{!! $color->hex !!}"/> {!! $color->name !!}
+                                                <input type="checkbox" name=colors[]" value="{!! $color->hex !!}" required/> {!! $color->name !!}
                                             @endforeach
+
                                         </div>
                                     </div>
 
                                     <div class="col-md-12">
                                         <div class="form-floating mb-3">
-                                            <textarea id="editor" name="description"></textarea>
+                                            <textarea id="editor" name="description" placeholder="Ürün açıklaması...">{!! old('description') !!}</textarea>
                                         </div>
                                     </div>
 
@@ -104,6 +102,7 @@
                                                     <input type="file" class="form-control" id="exampleInputname"
                                                            name="image">
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>

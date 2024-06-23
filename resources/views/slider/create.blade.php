@@ -25,7 +25,7 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-floating mb-3">
-                          <input type="text" class="form-control" name="title" placeholder="Başlık" value="{{ old('title') }}">
+                          <input type="text" class="form-control" name="title" placeholder="Başlık" value="{{ old('title') }}" required>
                             @error('title')
                             <p style="color:red; font-size: small">{{ $message }}</p>
                             @enderror
@@ -34,7 +34,7 @@
                       </div>
                       <div class="col-md-12">
                         <div class="form-floating mb-3">
-                            <textarea class="form-control" name ="body" placeholder="İçerik">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name ="body" placeholder="İçerik" required="required">{{ old('body') }}</textarea>
                             @error('body')
                             <p style="color:red; font-size: small">{{ $message }}</p>
                             @enderror
@@ -43,7 +43,7 @@
                       </div>
                       <div class="col-md-12">
                         <div class="form-floating mb-3">
-                          <input type="text" class="form-control"  name="highlight" placeholder="Vurgu" {{ old('highlight') }}>
+                          <input type="text" class="form-control"  name="highlight" placeholder="Vurgu" {{ old('highlight') }} required>
                             @error('highlight')
                             <p style="color:red; font-size: small">{{ $message }}</p>
                             @enderror
@@ -73,7 +73,7 @@
                             <div class="mb-4">
                     <label for="image" class="form-label">Resim</label>
                     <div class="input-group">
-                      <input type="file" class="form-control" id="exampleInputname" name="image">
+                      <input type="file" class="form-control" id="exampleInputname" name="image" required>
                     </div>
                   </div>
                           <div class="ms-auto mt-3 mt-md-0">
