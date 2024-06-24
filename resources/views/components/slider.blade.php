@@ -65,7 +65,7 @@
 												<h2 class="slider-title1 text-uppercase">{!! $slider->highlight !!}</h2>
 											</div>
 											<div class="wow fadeInUpBig" data-wow-duration="2s" data-wow-delay="0.5s">
-												<p class="slider-pro-brief">{!! $slider->description !!}</p>
+												<p class="slider-pro-brief">{!! $slider->body !!}</p>
 											</div>
                                             @isset($slider->button)
 											<div class="wow fadeInUpBig" data-wow-duration="2.5s" data-wow-delay="0.5s">
