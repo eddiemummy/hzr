@@ -69,7 +69,7 @@
 											</div>
                                             @isset($slider->button)
 											<div class="wow fadeInUpBig" data-wow-duration="2.5s" data-wow-delay="0.5s">
-												<a href="{!! $slider->link !!}" class="button-one style-2 text-uppercase mt-20" data-text="Shop now">{!! $slider->button !!}</a>
+												<a href="{!! $slider->link !!}" class="button-one style-2 text-uppercase mt-20" data-text="{!! $slider->button !!}">{!! $slider->button !!}</a>
 											</div>
                                             @endisset
 										</div>
