@@ -26,7 +26,8 @@
 				<div class="banner-left floatleft">
 					<!-- Slider-banner start -->
 					<div class="slider-banner">
-                        @foreach($products as $product)
+                        @php $prods = \App\Models\Product::latest()->take(2)->get(); @endphp
+                        @foreach($prods as $product)
                         <div class="single-banner banner-{!! $product->id !!}">
 							<a class="banner-thumb" href="#"><img src="{!! asset('storage/'.$product->default_image) !!}" alt=""></a>
 							<span class="pro-label new-label">yeni</span>
