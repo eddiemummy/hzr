@@ -73,7 +73,7 @@
                                             <label for="category_id">Renkler</label>
 
                                             @foreach($colors as $color)
-                                                <input type="checkbox" name=colors[]" value="{!! $color->hex !!}" required/> {!! $color->name !!}
+                                                <input type="checkbox" name=colors[]" value="{!! $color->hex !!}"/> {!! $color->name !!}
                                             @endforeach
 
                                         </div>
