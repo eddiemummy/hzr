@@ -32,14 +32,9 @@
 							<a class="banner-thumb" href="{{route('product.single',['slug'=>$product->slug])}}"><img src="{!! asset('storage/'.$product->default_image) !!}" alt=""></a>
 							<span class="pro-label new-label">yeni</span>
 							<span class="price">{!! $product->new_price !!}&#8378;</span>
-							<div class="banner-brief d-flex justify-content-between">
-                                <div>
-                                <h2 class="banner-title"><a href="{{route('product.single',['slug'=>$product->slug])}}">{!! $product->name !!}</a></h2>
-                                </div>
-								<div>
-                                <p>{!! $product->category->name !!}</p>
-                                </div>
-
+							<div class="banner-brief">
+								<h2 class="banner-title"><a href="{{route('product.single',['slug'=>$product->slug])}}">{!! $product->name !!}</a></h2>
+								<p class="mb-0">{!! $product->category->name !!}</p>
 							</div>
 						</div>
                         @endforeach
