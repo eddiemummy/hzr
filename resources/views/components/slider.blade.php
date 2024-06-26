@@ -29,7 +29,7 @@
                         @php $prods = \App\Models\Product::latest()->take(2)->get(); @endphp
                         @foreach($prods as $product)
                         <div class="single-banner banner-{!! $product->id !!}">
-							<a class="banner-thumb" href="{{route('product.single',['slug'=>$product->slug])}}"><img src="{!! asset('storage/'.$product->default_image) !!}" alt=""></a>
+							<a class="banner-thumb" href="{!! route('product.single',['slug'=>$product->slug]) !!}"><img src="{!! asset('storage/'.$product->default_image) !!}" alt=""></a>
 							<span class="pro-label new-label">yeni</span>
 							<span class="price">{!! $product->new_price !!}&#8378;</span>
 							<div class="banner-brief">
