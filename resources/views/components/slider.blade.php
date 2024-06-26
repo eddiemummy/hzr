@@ -34,7 +34,7 @@
 							<span class="price">{!! $product->new_price !!}&#8378;</span>
 							<div class="banner-brief">
 								<h2 class="banner-title"><a href="{{route('product.single',['slug'=>$product->slug])}}">{!! $product->name !!}</a></h2>
-								<p class="mb-0">{!! $product->category->name !!}</p>
+								<span class="mb-0">{!! $product->category->name !!}</span>
 							</div>
 							<a href="{{route('product.single',['slug'=>$product->slug])}}" class="button-one font-16px" data-text="İncele">İncele</a>
 						</div>
