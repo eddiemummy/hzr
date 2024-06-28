@@ -2,12 +2,12 @@
 <html class="no-js" lang="en">
     {{ $heading }}
 	<body>
+{{--    <x-alert/>--}}
 		<!-- WRAPPER START -->
 		<div class="wrapper">
 
 			<!-- Mobile-header-top Start -->
 
-			<x-mobile-header/>
 			<!-- Mobile-header-top End -->
 			<!-- HEADER-AREA START -->
 

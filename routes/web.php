@@ -5,9 +5,11 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SliderController;
 use App\Models\NewsLetter;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,10 +25,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/iletisim', [HomeController::class, 'contact'])->name('contact');
+Route::post('/iletisim', [MailController::class, 'sendMail'])->name('contact.mail');
 Route::get('/hakkimizda', [HomeController::class, 'aboutStore'])->name('about');
 Route::get('/urunlerimiz', [ProductController::class, 'productAll'])->name('product.all');
 Route::get('/kategori/{slug}', [ProductController::class, 'categoryAll'])->name('product.category.all');
 Route::get('/urun/{slug}', [ProductController::class, 'single'])->name('product.single');
+
+Route::get('test',function() {
+   Mail::to("feynmansphysics@gmail.com")->send(
+       new \App\Mail\ContactMail()
+    );
+   return "done";
+});
+
 
 
 Route::post('/news', [HomeController::class, 'store'])->name('news.store');

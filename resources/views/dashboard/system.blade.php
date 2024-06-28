@@ -29,7 +29,7 @@
                                     <div class="col-md-12">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" name="title" placeholder="Başlık"
-                                                   value="{{ $setting->title }}"/>
+                                                   value="{{ $setting->title ?? null }}"/>
                                             @error('title')
                                             <p style="color:red; font-size: small">{{ $message }}</p>
                                             @enderror
@@ -39,7 +39,7 @@
                                     <div class="col-md-12">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" name="description" placeholder="Açıklama"
-                                                   value="{{ $setting->description }}"/>
+                                                   value="{{ $setting->description ?? null }}"/>
                                             @error('description')
                                             <p style="color:red; font-size: small">{{ $message }}</p>
                                             @enderror
@@ -50,7 +50,7 @@
                                     <div class="col-md-12">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" name="keywords" placeholder="Anahtar Kelimeler"
-                                                   value="{{ $setting->keywords }}"/>
+                                                   value="{{ $setting->keywords ?? null }}"/>
                                             @error('keywords')
                                             <p style="color:red; font-size: small">{{ $message }}</p>
                                             @enderror
@@ -60,7 +60,7 @@
                                     <div class="col-md-12">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" name="facebook" placeholder="Facebook"
-                                                   value="{{ $setting->facebook }}"/>
+                                                   value="{{ $setting->facebook ?? null }}"/>
                                             @error('facebook')
                                             <p style="color:red; font-size: small">{{ $message }}</p>
                                             @enderror
@@ -70,7 +70,7 @@
                                     <div class="col-md-12">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" name="twitter" placeholder="Instagram"
-                                                   value="{{ $setting->instagram }}"/>
+                                                   value="{{ $setting->instagram ?? null }}"/>
                                             @error('instagram')
                                             <p style="color:red; font-size: small">{{ $message }}</p>
                                             @enderror
@@ -80,7 +80,7 @@
                                     <div class="col-md-12">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" name="twitter" placeholder="Twitter"
-                                                   value="{{ $setting->twitter }}"/>
+                                                   value="{{ $setting->twitter ?? null }}"/>
                                             @error('twitter')
                                             <p style="color:red; font-size: small">{{ $message }}</p>
                                             @enderror
@@ -91,7 +91,7 @@
                                     <div class="col-md-12">
                                          <div class="form-floating mb-3">
                                             <input type="text" class="form-control" name="youtube" placeholder="Youtube"
-                                                   value="{{ $setting->youtube }}"/>
+                                                   value="{{ $setting->youtube ?? null }}"/>
                                             @error('youtube')
                                             <p style="color:red; font-size: small">{{ $message }}</p>
                                             @enderror
