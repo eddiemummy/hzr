@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-4 offset-md-4 col-7">
                     <div class="logo text-md-center">
-                        <a href="/"><img src="{!! asset('img/logo/logo.png?v=10') !!}" alt="logo" width="200"></a>
+                        <a href="/"><img src="{!! asset('img/logo/logo.png?v=11') !!}" alt="logo" width="200"></a>
                     </div>
                 </div>
             </div>
