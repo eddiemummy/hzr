@@ -90,6 +90,9 @@
 .pro-label.best-label {
     background: #4b99d2 none repeat scroll 0 0;
 }
+.pro-label.discount-label {
+  background: #00cc99 none repeat scroll 0 0;
+}
 .single-banner .pro-label {
   left: 30px;
 }

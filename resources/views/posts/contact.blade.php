@@ -7,6 +7,7 @@
         </x-slot:title>
        </x-head>
     </x-slot>
+	<x-mobile-header/>
     <div class="contact-us-area  pt-80 pb-80">
 				<div class="container">
 					<div class="contact-us customer-login bg-white">

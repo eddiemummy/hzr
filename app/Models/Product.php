@@ -17,7 +17,8 @@ class Product extends Model
     // highlight,best_seller
     const SEGMENT_MAPS = array(
         'Öne çıkanlar' => 'pro-label new-label',
-        'Çok satanlar' => 'pro-label best-label'
+        'Çok satanlar' => 'pro-label best-label',
+        'İndirimli' => 'pro-label discount-label',
     );
 
     public function category(): BelongsTo

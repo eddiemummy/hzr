@@ -7,10 +7,10 @@
         </x-slot:title>
         <x-slot:description>
             {!! $about->body !!}
-        </x-slot:description>
+        </x-slot:description>		
        </x-head>
     </x-slot>
-
+	<x-mobile-header/>
 
     <div class="about-us-area  pt-80 pb-80">
 				<div class="container">
