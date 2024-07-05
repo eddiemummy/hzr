@@ -69,7 +69,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" name="twitter" placeholder="Instagram"
+                                            <input type="text" class="form-control" name="instagram" placeholder="Instagram"
                                                    value="{{ $setting->instagram ?? null }}"/>
                                             @error('instagram')
                                             <p style="color:red; font-size: small">{{ $message }}</p>
