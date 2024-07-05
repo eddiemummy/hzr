@@ -145,9 +145,7 @@
                                         <div class="col-lg-12">
                                             <div class="single-product clearfix">
                                                 <div class="product-img">
-                                                    @foreach(explode(',', $product->segment) as $segment)
-                                                        <span class="pro-label new-label">{!! $segment !!}</span>
-                                                    @endforeach
+                                                    {!! $product->getLabels() !!}
                                                     <span class="pro-price-2">&#8378; {!! $product->new_price !!}</span>
                                                     <a href="{{ route('product.single',['slug'=>$product->slug]) }}"><img
                                                             src="{{ asset('storage/'.$product->default_image) }}"

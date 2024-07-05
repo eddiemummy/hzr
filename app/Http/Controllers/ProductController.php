@@ -144,6 +144,19 @@ class ProductController extends Controller
             $path = Storage::disk('public')->put('product_images', $request->file('image'));
         }
 
+        $colors = $request->get("colors");
+        if (!$colors) {
+            $colors = Color::first()->hex;
+        }else {
+            $colors = implode(",", $request->get('colors'));
+        }
+
+        if (!$request->get('segment')) {
+            $segments = "Öne çıkanlar";
+        }else {
+            $segments = implode(",", $request->get('segment'));
+        }
+
         $product = Product::create([
             'category_id' => $request->get('category_id'),
             'name' => $request->get('name'),
@@ -152,8 +165,8 @@ class ProductController extends Controller
             'old_price' => $request->get('old_price'),
             'new_price' => $request->get('new_price'),
             'default_image' => $path,
-            'colors' => implode(",", $request->get('colors')),
-            'segment' => implode(",", $request->get('segment'))
+            'colors' => $colors,
+            'segment' => $segments
         ]);
 
 

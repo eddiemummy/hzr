@@ -20,7 +20,7 @@
                             <div>
                                 <img src="{{ asset('storage/'.$product->default_image) }}" alt="{!! $product->name !!}">
                                 <a class="view-full-screen" href="{{ asset('storage/'.$product->default_image) }}"
-                                   data-lightbox="roadtrip" data-title="My caption">
+                                   data-lightbox="roadtrip" data-title="{!! $product->name !!}">
                                     <i class="zmdi zmdi-zoom-in"></i>
                                 </a>
                             </div>
@@ -28,7 +28,7 @@
                                 <div>
                                     <img src="{{ asset('storage/'.$img->image) }}" alt="{!! $product->name !!}">
                                     <a class="view-full-screen" href="{{ asset('storage/'.$img->image) }}"
-                                       data-lightbox="roadtrip" data-title="My caption">
+                                       data-lightbox="roadtrip" data-title="{!! $product->name !!}">
                                         <i class="zmdi zmdi-zoom-in"></i>
                                     </a>
                                 </div>
@@ -79,7 +79,7 @@
                                 </div>
 
                                 <div class="phone-buy-btn">
-                                    <a target="_blank" href=""><i class="zmdi zmdi-phone-in-talk size-20"></i> Satın Al</a>
+                                    <a target="_blank" href="tel:905344184973"><i class="zmdi zmdi-phone-in-talk size-20"></i> Satın Al</a>
                                 </div>
                             </div>
                             <!-- Size end -->

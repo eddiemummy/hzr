@@ -38,9 +38,10 @@ class Product extends Model
 
     public function getLabels()
     {
-        foreach (explode(',', $this->segment) as $segment) {
-            return '<span class="'.self::SEGMENT_MAPS[$segment].'">'.$segment.'</span>';
-        }
+        $segments = explode(',', $this->segment);
+        $segment = $segments[count($segments) - 1];
+
+        return '<span class="'.self::SEGMENT_MAPS[$segment].'">'.$segment.'</span>';
     }
-    
+
 }
