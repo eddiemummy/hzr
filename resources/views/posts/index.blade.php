@@ -17,8 +17,10 @@
 {{--    @section('keywords',$setting->keywords)--}}
 {{--    @section('description',$setting->description)--}}
 	<body>
+		<x-alert/>
 		<!-- WRAPPER START -->
 		<div class="wrapper">
+
 
 			<!-- Mobile-header-top Start -->
 			<x-mobile-header/>

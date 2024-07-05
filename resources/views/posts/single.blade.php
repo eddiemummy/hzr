@@ -4,11 +4,12 @@
         <x-slot:title>
             {!! $product->name !!}
         </x-slot:title>
-        <x-slot:description>
+        <x-slot:meta_description>
             {!! $product->description !!}
-        </x-slot:description>
+        </x-slot:meta_description>
        </x-head>
     </x-slot>
+    <x-mobile-header/>
     <div class="product-area single-pro-area pt-80 pb-80 product-style-2">
         <div class="container">
             <div class="row shop-list single-pro-info no-sidebar">
@@ -43,7 +44,7 @@
                             </div>
                             <div class="fix mb-20">
                                 @isset($product->old_price)
-                                    @if($product->old_price - $product->new_price > 0)
+                                    @if(($product->old_price - $product->new_price) > 0)
                                         <span class="pro-price" style='color:black;text-decoration:line-through;'>
                                             <span style="color:darkcyan">&#8378; {{ $product->old_price }}</span>
                                         </span>

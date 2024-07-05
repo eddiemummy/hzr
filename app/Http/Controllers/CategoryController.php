@@ -33,13 +33,13 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-           'name' => 'required|unique:categories|max:255',
+           'name' => 'required|unique:categories,name|max:255',
         ]);
        Category::create([
            'name'=>$request->name,
            'slug'=>Str::slug($request->input('name'),'-')
        ]);
-        return redirect()->route('categories.index');
+        return back();
     }
 
     /**
@@ -71,7 +71,7 @@ class CategoryController extends Controller
             'name' => $request->name,
             'slug'=>Str::slug($request->input('name'),'-')
         ]);
-        return redirect()->intended('dashboard/categories');
+        return back();
     }
 
     /**

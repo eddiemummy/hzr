@@ -2,10 +2,11 @@
     <x-slot name="heading">
         <x-head>
         <x-slot:title>
-            {{ $is_cat ? 'Kategoriler' : 'Ürünler'  }}
+            {{ $is_cat ? 'Kategori' : 'Ürünler'  }}
         </x-slot:title>
        </x-head>
     </x-slot>
+    <x-mobile-header/>
     <div class="product-area pt-80 pb-80 product-style-2">
         <div class="container">
             <div class="row">
@@ -126,9 +127,13 @@
                                                     </div>
                                                     <div class="fix">
                                                         @isset($product->old_price)
-                                                            <span class="pro-price"
-                                                                  style='color:black;text-decoration:line-through;color:darkcyan; margin-right: 10px;'> &#8378; {{ $product->old_price }}</span>
-                                                        @endisset
+                                    @if(($product->old_price - $product->new_price) > 0)
+                                        <span class="pro-price" style='color:black;text-decoration:line-through;'>
+                                            <span style="color:darkcyan">&#8378; {{ $product->old_price }}</span>
+                                        </span>
+                                        &nbsp;&nbsp;
+                                    @endif
+                                @endisset
                                                         <span class="pro-price">{!! $product->new_price !!} ₺</span>
                                                     </div>
                                                 </div>
@@ -146,6 +151,8 @@
                                             <div class="single-product clearfix">
                                                 <div class="product-img">
                                                     {!! $product->getLabels() !!}
+
+
                                                     <span class="pro-price-2">&#8378; {!! $product->new_price !!}</span>
                                                     <a href="{{ route('product.single',['slug'=>$product->slug]) }}"><img
                                                             src="{{ asset('storage/'.$product->default_image) }}"

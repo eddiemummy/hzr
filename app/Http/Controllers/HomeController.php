@@ -42,6 +42,6 @@ class HomeController extends Controller
            'email' => 'required|email'
         ]);
         NewsLetter::create($validation);
-        return back();
+        return back()->with('success', 'Abone olduğunuz için teşekkürler.');
     }
 }

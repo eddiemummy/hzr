@@ -184,7 +184,7 @@ class ProductController extends Controller
         $cat = $product->category;
         $cat->count += 1;
         $cat->save();
-        return redirect()->route('products.index');
+        return back();
     }
 
     /**
@@ -229,7 +229,7 @@ class ProductController extends Controller
             'segment' => implode(",", $request->get('segment'))
 
         ]);
-        return redirect()->route('products.index');
+        return back();
     }
 
     /**
@@ -244,7 +244,7 @@ class ProductController extends Controller
         }
 
         $product->delete();
-        return redirect()->route('products.index');
+        return back();
     }
 
     public function display(Product $product)
