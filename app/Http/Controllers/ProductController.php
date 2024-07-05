@@ -26,6 +26,7 @@ class ProductController extends Controller
     public function categoryAll(Request $request, $slug)
     {
         $category = Category::where("slug", $slug)->first();
+        $catName = $category->name;
         $products = Product::where("category_id", $category->id);
 
         $filterMin = 0;
@@ -68,7 +69,7 @@ class ProductController extends Controller
         $colors = Color::all();
 
         return view('posts.side', compact('products', 'is_cat', 'colors', 'selectedColors',
-        'filterMin', 'filterMax'));
+        'filterMin', 'filterMax', 'catName'));
     }
 
     public function productAll(Request $request)

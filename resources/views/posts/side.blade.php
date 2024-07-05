@@ -2,7 +2,7 @@
     <x-slot name="heading">
         <x-head>
         <x-slot:title>
-            {{ $is_cat ? 'Kategori' : 'Ürünler'  }}
+            {{ $is_cat ? $catName : 'Ürünler'  }}
         </x-slot:title>
        </x-head>
     </x-slot>
@@ -151,9 +151,6 @@
                                             <div class="single-product clearfix">
                                                 <div class="product-img">
                                                     {!! $product->getLabels() !!}
-
-
-                                                    <span class="pro-price-2">&#8378; {!! $product->new_price !!}</span>
                                                     <a href="{{ route('product.single',['slug'=>$product->slug]) }}"><img
                                                             src="{{ asset('storage/'.$product->default_image) }}"
                                                             alt="{!! $product->name !!}"></a>
@@ -164,9 +161,16 @@
                                                                 href="{{ route('product.single',['slug'=>$product->slug]) }}">{!! $product->name !!}</a>
                                                         </h4>
                                                     </div>
-                                                    <div class="fix mb-20">
-                                                        <span
-                                                            class="pro-price">&#8378; {!! $product->new_price !!}</span>
+                                                    <div class="fix">
+                                                        @isset($product->old_price)
+                                                            @if(($product->old_price - $product->new_price) > 0)
+                                                                <span class="pro-price" style='color:black;text-decoration:line-through;'>
+                                            <span style="color:darkcyan">&#8378; {{ $product->old_price }}</span>
+                                        </span>
+                                                                &nbsp;&nbsp;
+                                                            @endif
+                                                        @endisset
+                                                        <span class="pro-price">{!! $product->new_price !!} ₺</span>
                                                     </div>
                                                     <div class="product-description">
                                                         <p>{!! $product->description !!}</p>

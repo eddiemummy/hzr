@@ -5,7 +5,7 @@
             {!! $product->name !!}
         </x-slot:title>
         <x-slot:meta_description>
-            {!! $product->description !!}
+            {!! mb_substr(strip_tags($product->description), 0, 300) !!}
         </x-slot:meta_description>
        </x-head>
     </x-slot>
