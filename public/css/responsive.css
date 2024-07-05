@@ -65,10 +65,12 @@
   width: 45%;
 }
 .banner-left {
-  width: 29.1%;
+    width: 29.1%;
+    height: 45.5vw;
 }
 .slider-right {
-  width: 70.9%;
+    width: 70.9%;
+    height: 45.5vw;
 }
 
 }
@@ -180,10 +182,10 @@
 
 
 }
- 
+
 /* Tablet desktop :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
-	
+
 .mt-tab-30 {
   margin-top: 30px;
 }
@@ -361,7 +363,7 @@
 
 }
 
- 
+
 /* small mobile :320px. */
 @media (max-width: 767px) {
 .container {width:300px}
@@ -426,14 +428,14 @@
 }
 .mean-container .mean-nav ul li.mean-last {
   margin-bottom: 20px;
-} 
+}
 /* mini-cart */
 .mini-cart-brief {
   width: 290px;
-} 
+}
 .single-cart {
   padding: 10px 15px;
-} 
+}
 .cart-photo {
   width: 75px;
 }
@@ -454,7 +456,7 @@
 .banner-left {
   padding-right: 0;
   width: 100%;
-} 
+}
 .single-banner {
   width: 100%;
 }
@@ -493,7 +495,7 @@
 }
 .arrow-left-right .slick-next.slick-arrow {
   right: 15px;
-} 
+}
 .section-title h2 {
   font-size: 22px;
   margin-bottom: 15px;
@@ -536,7 +538,7 @@
 /* blog  */
 .blog-info {
   padding-bottom: 25px;
-} 
+}
 /* subscribe */
 .subscribe-area {
   margin-bottom: -65px;
@@ -544,15 +546,15 @@
 .subscribe form {
   margin: auto;
   width: calc(100% - 40px);
-} 
+}
 .subscribe input {
   margin: 0 0 15px;
   width: 100%;
-} 
+}
 .subscribe .submit-button {
   margin: auto;
   text-align: center;
-} 
+}
 /* footer-area */
 .footer-area {
   padding: 100px 0 65px;
@@ -869,7 +871,7 @@
 
 
 }
- 
+
 /* Large Mobile :480px. */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 .container {width:450px}
@@ -881,4 +883,4 @@
 
 
 }
- 
+
