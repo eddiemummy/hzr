@@ -40,7 +40,7 @@
         <!-- shortcode css -->
         <link rel="stylesheet" href="{{ asset('css/shortcode.css') }}">
 		<!-- responsive css -->
-        <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/responsive.css') }}?v=1">
 		<!-- modernizr css -->
 		<script src="{{ asset('js/vendor/modernizr-3.11.2.min.js') }}"></script>
 	</head>
