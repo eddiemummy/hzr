@@ -25,7 +25,8 @@
     }
 
     .banner-left .single-banner {
-        width: 50%;
+        width: 49%;
+        margin-bottom: 15px !important;
     }
 
     .banner-left .single-banner.banner-1 {
