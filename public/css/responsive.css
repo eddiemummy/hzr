@@ -25,8 +25,7 @@
     }
 
     .banner-left .single-banner {
-        width: 49%;
-        margin-bottom: 15px !important;
+        width: 50%;
     }
 
     .banner-left .single-banner.banner-1 {
@@ -1111,7 +1110,8 @@
 }
 
 .single-banner {
-    height: 50% !important;
+    height: 49% !important;
+    margin-bottom: 15px !important;
 }
 
 .banner-thumb {
