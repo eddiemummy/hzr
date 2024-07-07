@@ -90,4 +90,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard/banner', [DashboardController::class, 'banner'])->name('banner');
     Route::put('/dashboard/banner', [DashboardController::class, 'updateBanner'])->name('dashboard.banner');
     Route::get('/dashboard/review', [DashboardController::class, 'review'])->name('dashboard.review');
+    Route::get('dashboard/system/down',[DashboardController::class,'is_down'])->name('dashboard.down');
 });

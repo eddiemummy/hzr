@@ -101,11 +101,25 @@
 
                                     </div>
 
-                                    <div class="ms-auto mt-3 mt-md-0">
-                                                <button type="submit" class="btn btn-success hstack gap-6">
-                                                    <iconify-icon icon="tabler:edit" class="fs-7"></iconify-icon>
-                                                </button>
-                                            </div>
+
+                                <div class="container">
+                                    <div class="row justify-content-left">
+                                        <div class="col-auto">
+
+                                            <button type="submit" class="btn btn-success hstack gap-6">
+                                                <iconify-icon icon="tabler:edit" class="fs-7"></iconify-icon>
+                                            </button>
+                                        </div>
+                                        @php $bakim = \App\Models\Maintenance::select('bakim')->first()->bakim ?? false; @endphp
+
+                                        <div class="col-auto">
+                                            <a href = "{{ route('dashboard.down') }}" class="{{ $bakim ? 'btn btn-success hstack gap-6' : 'btn btn-warning hstack gap-6'}}">
+                                                {{ $bakim ? 'BAKIM AÇIK' : 'BAKIM KAPALI'}}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
 
                             </form>
                         </div>

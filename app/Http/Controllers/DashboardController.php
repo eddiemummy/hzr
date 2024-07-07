@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Banner;
 use App\Models\Contact;
+use App\Models\Maintenance;
 use App\Models\NewsLetter;
 use App\Models\Product;
 use App\Models\Review;
@@ -148,6 +149,18 @@ class DashboardController extends Controller
         $reviews = Review::latest()->paginate(10);
         return view('dashboard.review',compact('reviews'));
 
+    }
+    public function is_down() {
+        $maintenance = Maintenance::first();
+        if (!$maintenance) {
+            $new = new Maintenance();
+            $new->bakim=true;
+            $new->save();
+            return back();
+        }
+        $maintenance->bakim=!$maintenance->bakim;
+        $maintenance->save();
+        return back();
     }
 
 }
