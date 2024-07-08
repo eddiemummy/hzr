@@ -75,12 +75,12 @@
                             <div class="clearfix display-flex">
                                 <div class="wp-buy-btn">
                                     <a target="_blank"
-                                       href="https://api.whatsapp.com/send?phone=905344184973&text={!! $product->name." ürününüz hakkında bilgi almak istiyorum." !!}"><i
+                                       href="https://api.whatsapp.com/send?phone=905301179782&text={!! $product->name." ürününüz hakkında bilgi almak istiyorum." !!}"><i
                                             class="zmdi zmdi-whatsapp size-20"></i> Satın Al</a>
                                 </div>
 
                                 <div class="phone-buy-btn">
-                                    <a target="_blank" href="tel:905344184973"><i class="zmdi zmdi-phone-in-talk size-20"></i> Satın Al</a>
+                                    <a target="_blank" href="tel:905301179782"><i class="zmdi zmdi-phone-in-talk size-20"></i> Satın Al</a>
                                 </div>
                             </div>
                             <!-- Size end -->
