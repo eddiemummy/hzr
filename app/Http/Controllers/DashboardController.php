@@ -163,4 +163,9 @@ class DashboardController extends Controller
         return back();
     }
 
+    public function deleteReview(Review $review) {
+        $review->delete();
+        return back();
+    }
+
 }

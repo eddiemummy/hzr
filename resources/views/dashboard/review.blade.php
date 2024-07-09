@@ -38,7 +38,7 @@
                         <td>{{ $rev->email }}</td>
                           <td>
                               <div class="flex-lg-row">
-                                     <a href="#" class="btn btn-primary" onclick="return confirm('Silmek istediğinizden emin misiniz?');">
+                                     <a href="{{ route('delete.review',["review"=>$rev]) }}" class="btn btn-primary" onclick="return confirm('Silmek istediğinizden emin misiniz?');">
                                       <iconify-icon icon="solar:trash-bin-minimalistic-line-duotone" class="fs-7"></iconify-icon>
 
                                   </a>

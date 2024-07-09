@@ -91,4 +91,5 @@ Route::middleware('auth')->group(function () {
     Route::put('/dashboard/banner', [DashboardController::class, 'updateBanner'])->name('dashboard.banner');
     Route::get('/dashboard/review', [DashboardController::class, 'review'])->name('dashboard.review');
     Route::get('dashboard/system/down',[DashboardController::class,'is_down'])->name('dashboard.down');
+    route::get('dashboard/review/delete/{review}',[DashboardController::class,'deleteReview'])->name('delete.review');
 });
